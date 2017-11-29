@@ -331,6 +331,12 @@ namespace BooCompiler.Tests
 		}
 		
 		[Test]
+		public void fields_10()
+		{
+			RunCompilerTestCase(@"fields-10.boo");
+		}
+		
+		[Test]
 		public void fields_2()
 		{
 			RunCompilerTestCase(@"fields-2.boo");
@@ -653,13 +659,13 @@ namespace BooCompiler.Tests
 		{
 			RunCompilerTestCase(@"interfaces-22.boo");
 		}
-
-        [Test]
-        public void interfaces_23()
-        {
-            RunCompilerTestCase(@"interfaces-23.boo");
-        }		
-
+		
+		[Test]
+		public void interfaces_23()
+		{
+			RunCompilerTestCase(@"interfaces-23.boo");
+		}
+		
 		[Test]
 		public void interfaces_3()
 		{

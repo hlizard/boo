@@ -1395,6 +1395,12 @@ namespace BooCompiler.Tests
 		}
 		
 		[Test]
+		public void delegate_overload()
+		{
+			RunCompilerTestCase(@"delegate-overload.boo");
+		}
+		
+		[Test]
 		public void duck_default_member_overload()
 		{
 			RunCompilerTestCase(@"duck-default-member-overload.boo");
@@ -1419,6 +1425,18 @@ namespace BooCompiler.Tests
 		}
 		
 		[Test]
+		public void linq_filter_error_2()
+		{
+			RunCompilerTestCase(@"linq-filter-error-2.boo");
+		}
+		
+		[Test]
+		public void linq_filter_error()
+		{
+			RunCompilerTestCase(@"linq-filter-error.boo");
+		}
+		
+		[Test]
 		public void method_with_type_inference_rule_as_statement()
 		{
 			RunCompilerTestCase(@"method-with-type-inference-rule-as-statement.boo");
@@ -1435,25 +1453,7 @@ namespace BooCompiler.Tests
 		{
 			RunCompilerTestCase(@"override-inference.boo");
 		}
-
-		[Test]
-		public void linq_filter_error()
-		{
-			RunCompilerTestCase(@"linq-filter-error.boo");
-		}
-
-		[Test]
-		public void linq_filter_error_2()
-		{
-			RunCompilerTestCase(@"linq-filter-error-2.boo");
-		}
-
-		[Test]
-		public void delegate_overload()
-		{
-			RunCompilerTestCase(@"delegate-overload.boo");
-		}
-
+		
 
 		override protected string GetRelativeTestCasesPath()
 		{
