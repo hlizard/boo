@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Boo.Lang.Compiler</RootNamespace>
+    <AssemblyName>Boo.Lang.Compiler</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;NO_SYSTEM_PROCESS;NET_40_OR_GREATER</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pipelines\CompileToFile.cs" />
+    <Compile Remove="Pipelines\CompileToFileAndVerify.cs" />
+    <Compile Remove="Steps\EmitAssemblyByCecil.cs" />
+    <Compile Remove="Steps\SaveAssembly.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EffectiveAsyncResult" Version="1.0.1" />
+    <PackageReference Include="Mono.Cecil" Version="0.10.0-beta7" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Emit.ILGeneration" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Boo.Lang\Boo.Lang.Core.csproj" />
+  </ItemGroup>
+
+</Project>

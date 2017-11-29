@@ -35,24 +35,24 @@ namespace Boo.Lang.Compiler.Util
 	{
 		public static T WithEnvironmentPermission<T>(Func<T> function)
 		{
-			return WithPermission(ref hasEnvironmentPermission, () => new EnvironmentPermission(PermissionState.Unrestricted), function);
+            return default(T); //WithPermission(ref hasEnvironmentPermission, () => new EnvironmentPermission(PermissionState.Unrestricted), function);
 		}
 
 		public static T WithDiscoveryPermission<T>(Func<T> function)
 		{
-			return WithPermission(ref hasDiscoveryPermission, () => new FileIOPermission(PermissionState.Unrestricted), function);
-		}
+			return default(T); //WithPermission(ref hasDiscoveryPermission, () => new FileIOPermission(PermissionState.Unrestricted), function);
+        }
 
-		public static void WithAppDomainPermission(Action action)
-		{
-			WithPermission(ref hasAppDomainPermission,
-				() => new SecurityPermission(SecurityPermissionFlag.ControlAppDomain),
-				() => { action(); return false; });
-		}
+		//public static void WithAppDomainPermission(Action action)
+		//{
+		//	WithPermission(ref hasAppDomainPermission,
+		//		() => new SecurityPermission(SecurityPermissionFlag.ControlAppDomain),
+		//		() => { action(); return false; });
+		//}
 
-		static bool? hasAppDomainPermission;
-		static bool? hasEnvironmentPermission;
-		static bool? hasDiscoveryPermission;
+		//static bool? hasAppDomainPermission;
+		//static bool? hasEnvironmentPermission;
+		//static bool? hasDiscoveryPermission;
 
 		private static TRetVal WithPermission<TPermission, TRetVal>(ref bool? hasPermission, Func<TPermission> permission, Func<TRetVal> function)
 		{

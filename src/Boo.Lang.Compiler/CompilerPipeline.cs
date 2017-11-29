@@ -80,8 +80,8 @@ namespace Boo.Lang.Compiler
 				case "parse": return new Pipelines.Parse();
 				case "compile": return new Pipelines.Compile();
 				case "run": return new Pipelines.Run();
-				case "default": return new Pipelines.CompileToFile();
-				case "verify": return new Pipelines.CompileToFileAndVerify();
+				case "default": return new Pipelines.CompileToMemory();
+				//case "verify": return new Pipelines.CompileToFileAndVerify();
 				case "roundtrip": return new Pipelines.ParseAndPrint();
 				case "boo": return new Pipelines.CompileToBoo();
 				case "ast": return new Pipelines.ParseAndPrintAst();

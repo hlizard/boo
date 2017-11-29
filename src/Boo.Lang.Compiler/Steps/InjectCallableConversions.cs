@@ -27,13 +27,14 @@
 #endregion
 
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
+//using System.Runtime.Remoting.Messaging;
 using Boo.Lang.Compiler.TypeSystem.Builders;
 using Boo.Lang.Compiler.TypeSystem.Core;
 using Boo.Lang.Compiler.Util;
 using Boo.Lang.Compiler.Ast;
 using Boo.Lang.Compiler.TypeSystem;
-	
+using EffectiveAsyncResult;
+
 namespace Boo.Lang.Compiler.Steps
 {
 	public class InjectCallableConversions : AbstractVisitorCompilerStep
@@ -219,7 +220,7 @@ namespace Boo.Lang.Compiler.Steps
 
 			var type = typeof(AsyncResult);
 			_asyncResultType = TypeSystemServices.Map(type);
-			_asyncResultTypeAsyncDelegateGetter = TypeSystemServices.Map(Methods.GetterOf<AsyncResult, object>(r => r.AsyncDelegate));
+			_asyncResultTypeAsyncDelegateGetter = TypeSystemServices.Map(Methods.GetterOf<AsyncResult, object>(r => r.AsyncWaitHandle));
 		}
 		
 		override public void Dispose()

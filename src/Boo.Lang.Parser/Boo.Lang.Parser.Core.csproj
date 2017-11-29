@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Boo.Lang.Parser</RootNamespace>
+    <AssemblyName>Boo.Lang.Parser</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;IGNOREKEYFILE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Boo.Lang.Compiler\Boo.Lang.Compiler.Core.csproj" />
+    <ProjectReference Include="..\Boo.Lang\Boo.Lang.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -631,7 +631,7 @@ namespace booc
 
 		private void ConfigurePipeline()
 		{
-			var pipeline = _pipelineName != null ? CompilerPipeline.GetPipeline(_pipelineName) : new CompileToFile();
+			var pipeline = _pipelineName != null ? CompilerPipeline.GetPipeline(_pipelineName) : new CompileToMemory();
 			_options.Pipeline = pipeline;
 			if (_debugSteps)
 			{
