@@ -99,7 +99,8 @@ Boo.
 More Information
 ================
 
-http://boo-lang.org/ https://groups.google.com/forum/#!forum/boolang
+http://boo-lang.org/
+https://groups.google.com/forum/#!forum/boolang
 
 Contributors
 ============
