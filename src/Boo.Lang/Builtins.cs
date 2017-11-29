@@ -49,8 +49,12 @@ namespace Boo.Lang
 		{
 			get
 			{
-				var assemblyVersion=typeof(Builtins).Assembly.GetName().Version;
-				return new Version(0, assemblyVersion.Minor, assemblyVersion.Build, assemblyVersion.Revision);
+                var assemblyVersion = typeof(Builtins)
+#if DNXCORE50 || NETSTANDARD1_6
+                    .GetTypeInfo()
+#endif
+                    .Assembly.GetName().Version;
+                return new Version(0, assemblyVersion.Minor, assemblyVersion.Build, assemblyVersion.Revision);
 			}
 		}
 
