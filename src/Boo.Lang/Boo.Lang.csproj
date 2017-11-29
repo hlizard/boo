@@ -14,6 +14,7 @@
     <AssemblyOriginatorKeyFile>..\boo.snk</AssemblyOriginatorKeyFile>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
