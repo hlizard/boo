@@ -233,8 +233,8 @@ namespace Boo.Lang.Compiler.Steps
 
 			_moduleBuilder.CreateGlobalFunctions(); //setup global .data
 
-            var hello = _moduleBuilder.Assembly.DefinedTypes.First().DeclaredMethods.First();
-            hello.Invoke(null, null);
+            //var hello = _moduleBuilder.Assembly.DefinedTypes.First().DeclaredMethods.First();
+            //hello.Invoke(null, null);
 		}
 
 		void GatherAssemblyAttributes()
@@ -823,11 +823,11 @@ namespace Boo.Lang.Compiler.Steps
 		{
 			InternalLocal info = GetInternalLocal(local);
 			info.LocalBuilder = _il.DeclareLocal(GetSystemType(local), info.Type.IsPointer);
-			if (Parameters.Debug)
-			{
-                //info.LocalBuilder.SetLocalSymInfo(local.Name);
-                throw new NotImplementedException("InternalLocal.LocalBuilder.SetLocalSymInfo");
-			}
+			//if (Parameters.Debug)
+			//{
+   //             //info.LocalBuilder.SetLocalSymInfo(local.Name);
+   //             throw new NotImplementedException("InternalLocal.LocalBuilder.SetLocalSymInfo");
+			//}
 		}
 
 		override public void OnForStatement(ForStatement node)

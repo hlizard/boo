@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boo.Lang.Core", "Boo.Lang\Boo.Lang.Core.csproj", "{328DD1BA-47FA-4D6A-A120-54B4EC3C170F}"
 EndProject
@@ -10,6 +10,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "booc.Core", "booc\booc.Core.csproj", "{A0250229-6952-47C8-A272-810AF1F4B44F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boo.Lang.Parser.Core", "Boo.Lang.Parser\Boo.Lang.Parser.Core.csproj", "{849C03E2-46E9-4068-823D-B9727962185D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3BCC12A0-3228-4A0A-9C24-37B2FBFB3ABA}"
+	ProjectSection(SolutionItems) = preProject
+		readme.txt = readme.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
