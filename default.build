@@ -313,6 +313,7 @@
 			<arg value="-r:Boo.Lang.dll" />
 			<arg value="-r:Boo.Lang.Extensions.dll" />
 			<arg value="-r:System.Private.CoreLib.dll" />
+			<arg value="-r:System.Console.dll" />
 			<arg line='"-lib:${nant::get-base-directory()}"' />
 		</exec>
 		<copy file="src/booish/booish.rsp" tofile="${build.dir}/booish.rsp"/>

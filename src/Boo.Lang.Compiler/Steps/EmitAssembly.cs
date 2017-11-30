@@ -233,8 +233,11 @@ namespace Boo.Lang.Compiler.Steps
 
 			_moduleBuilder.CreateGlobalFunctions(); //setup global .data
 
-            //var hello = _moduleBuilder.Assembly.DefinedTypes.First().DeclaredMethods.First();
-            //hello.Invoke(null, null);
+            var hello = _moduleBuilder.Assembly.DefinedTypes.First().DeclaredMethods.FirstOrDefault();
+            if (hello != null && hello.Name == "hello" && hello.IsStatic)
+            {
+                hello.Invoke(null, null);
+            }
 
             Console.WriteLine("compile success: " + _moduleBuilder.Assembly.FullName);
             if (Context.GeneratedAssemblyFileName == "Boo.Lang.Extensions.dll")
