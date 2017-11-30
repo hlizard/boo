@@ -39,9 +39,9 @@ import Boo.Lang.Interpreter.ColorScheme
 class File:
 """Implements Move, Del, Copy commands."""
 		
-		_interpreter as Interpreter.InteractiveInterpreter
+		_interpreter as Boo.Lang.Interpreter.InteractiveInterpreter
 
-		public def constructor (interpreter as Interpreter.InteractiveInterpreter):
+		public def constructor (interpreter as Boo.Lang.Interpreter.InteractiveInterpreter):
 			_interpreter = interpreter
 				
 		[CmdDeclaration("mv move", Description:"Move a file to another directory or rename it.")]

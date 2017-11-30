@@ -249,7 +249,7 @@
 			</references>
 		</booc> -->
 
-		<!-- <exec program="${build.dir}/booc.Core.exe">
+		<exec program="${build.dir}/booc.Core.exe">
 			<arg value="-v" />
 			<arg value="-noconfig" />
 			<arg value="-debug-" />
@@ -260,18 +260,21 @@
 			<arg value="-srcdir:src/Boo.Lang.Interpreter" />
 			<arg value="-srcdir:src/Boo.Lang.PatternMatching" />
 			<arg value="-srcdir:src/booish.mod.os" />
-			<arg value="-srcdir:src/Boo.Lang.Extensions" />
+			<!-- <arg value="-srcdir:src/Boo.Lang.Extensions" /> -->
 			<arg value="-srcdir:src/Boo.Lang.Useful" />
 			<arg value="-r:Boo.Lang.Parser.dll" />
 			<arg value="-r:Boo.Lang.Compiler.dll" />
 			<arg value="-r:Boo.Lang.dll" />
+			<arg value="-r:Boo.Lang.Extensions.dll" />
 			<arg value="-r:System.Private.CoreLib.dll" />
 			<arg value="-r:System.Private.Xml.dll" />
 			<arg value="-r:System.Runtime.Extensions.dll" />
 			<arg value="-r:System.Runtime.dll" />
 			<arg value="-r:System.IO.FileSystem.dll" />
+			<arg value="-r:System.Console.dll" />
+			<arg value="-r:System.Collections.dll" />
 			<arg line='"-lib:${nant::get-base-directory()}"' />
-		</exec> -->
+		</exec>
 		
 		<!-- <exec program="dotnet">
 			<arg value="${build.dir}/booc.Core.dll"/>
@@ -301,21 +304,20 @@
 			<arg line='"-lib:${nant::get-base-directory()}"' />
 		</exec> -->
 		
-		<exec program="${build.dir}/booc.Core.exe">
+		<!-- <exec program="${build.dir}/booc.Core.exe">
 			<arg value="-v" />
 			<arg value="-noconfig" />
 			<arg value="-debug-" />
 			<arg value="-target:library" />
 			<arg value="-c:en-US" />
 			<arg value="-nostdlib" />
-			<!-- <arg value="-srcdir:src/Boo.Lang.Extensions" /> -->
 			<arg value="-srcdir:src/booc/bin/Debug/netcoreapp2.0" />
 			<arg value="-r:Boo.Lang.dll" />
 			<arg value="-r:Boo.Lang.Extensions.dll" />
 			<arg value="-r:System.Private.CoreLib.dll" />
 			<arg value="-r:System.Console.dll" />
 			<arg line='"-lib:${nant::get-base-directory()}"' />
-		</exec>
+		</exec> -->
 		<copy file="src/booish/booish.rsp" tofile="${build.dir}/booish.rsp"/>
 
 	</target>
