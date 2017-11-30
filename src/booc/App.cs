@@ -56,6 +56,7 @@ namespace booc
 
 		private static int AppRun(string[] args)
 		{
+            new App().Run(@"-target:library -debug- -v -noconfig -o:Boo.Lang.Extensions.dll -srcdir:/MyCode/boo-0.9.6/src/Boo.Lang.Extensions -r:Boo.Lang.Compiler.dll -r:Boo.Lang.dll -r:System.Private.CoreLib.dll -lib:E:\MyCode\boo-0.9.6\src\booc\bin\Release\PublishOutput".Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
 			return new App().Run(args);
 		}
 

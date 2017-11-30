@@ -164,12 +164,18 @@ namespace Boo.Lang.Compiler
 		private IAssemblyReference TryToLoadExtensionsAssembly()
 		{
 			const string booLangExtensionsDll = "Boo.Lang.Extensions.dll";
-			return Permissions.WithDiscoveryPermission(() =>
-			{
-				var path = Path.Combine(Path.GetDirectoryName(_booAssembly.Location), booLangExtensionsDll);
-				return File.Exists(path) ? AssemblyReferenceFor(Assembly.LoadFrom(path)) : null;
-			}) ?? LoadAssembly(booLangExtensionsDll, false);
-		}
+            //return Permissions.WithDiscoveryPermission(() =>
+            //{
+            //    var path = Path.Combine(Path.GetDirectoryName(_booAssembly.Location), booLangExtensionsDll);
+            //    return File.Exists(path) ? AssemblyReferenceFor(Assembly.LoadFrom(path)) : null;
+            //}) ?? LoadAssembly(booLangExtensionsDll, false);
+            
+            if (Steps.EmitAssembly.Boo_Lang_Extensions_Assembly != null)
+            {
+                return AssemblyReferenceFor(Steps.EmitAssembly.Boo_Lang_Extensions_Assembly);
+            }
+            return null;
+        }
 
 		public Assembly BooAssembly
 		{
@@ -206,6 +212,10 @@ namespace Boo.Lang.Compiler
 
 		public IAssemblyReference LoadAssembly(string assemblyName, bool throwOnError)
 		{
+            if(assemblyName == "Boo.Lang.Extensions.dll")
+            {
+                return TryToLoadExtensionsAssembly();
+            }
 			var assembly = ForName(assemblyName, throwOnError);
 			return assembly != null ? AssemblyReferenceFor(assembly) : null;
 		}

@@ -2,7 +2,7 @@
   "profiles": {
     "booc.Core": {
       "commandName": "Project",
-      "commandLineArgs": "-target:library -debug- \\MyCode\\boo-0.9.6\\src\\booc\\bin\\Debug\\netcoreapp2.0\\hello.boo"
+      "commandLineArgs": "-target:library -debug- -nostdlib -srcdir:\\MyCode\\boo-0.9.6\\src\\booc\\bin\\Debug\\netcoreapp2.0 -r:Boo.Lang.Extensions.dll -r:System.Private.CoreLib.dll "
     }
   }
 }

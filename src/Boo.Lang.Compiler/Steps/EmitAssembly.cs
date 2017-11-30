@@ -235,9 +235,17 @@ namespace Boo.Lang.Compiler.Steps
 
             //var hello = _moduleBuilder.Assembly.DefinedTypes.First().DeclaredMethods.First();
             //hello.Invoke(null, null);
+
+            Console.WriteLine("compile success: " + _moduleBuilder.Assembly.FullName);
+            if (Context.GeneratedAssemblyFileName == "Boo.Lang.Extensions.dll")
+            {
+                Boo_Lang_Extensions_Assembly = _moduleBuilder.Assembly;
+            }
 		}
 
-		void GatherAssemblyAttributes()
+        internal static Assembly Boo_Lang_Extensions_Assembly = null;
+
+        void GatherAssemblyAttributes()
 		{
 			foreach (var module in CompileUnit.Modules)
 				foreach (var attribute in module.AssemblyAttributes)
