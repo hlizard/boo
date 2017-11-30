@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "booc.Core": {
+      "commandName": "Project",
+      "commandLineArgs": "-target:library -debug- \\MyCode\\boo-0.9.6\\src\\booc\\bin\\Debug\\netcoreapp2.0\\hello.boo"
+    }
+  }
+}

@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_6;NO_SERIALIZATION_INFO;NO_SYSTEM_PROCESS;DNXCORE50;IGNOREKEYFILE;NET35;NET35</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_6;NO_SERIALIZATION_INFO;NO_SYSTEM_PROCESS;DNXCORE50;IGNOREKEYFILE;NET35</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;RELEASE;NETSTANDARD1_6;NO_SERIALIZATION_INFO;NO_SYSTEM_PROCESS;DNXCORE50;IGNOREKEYFILE;NET35</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
