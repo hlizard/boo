@@ -238,6 +238,18 @@ namespace Boo.Lang.Compiler.Steps
             {
                 hello.Invoke(null, null);
             }
+            else
+            {
+                foreach(var t in _moduleBuilder.Assembly.DefinedTypes)
+                {
+                    if(t.FullName == "BooishModule")
+                    {
+                        var main = t.DeclaredMethods.FirstOrDefault();
+                        main.Invoke(null, new object[] { new string[] { } });
+                        break;
+                    }
+                }
+            }
 
             Console.WriteLine("compile success: " + _moduleBuilder.Assembly.FullName);
             if (Context.GeneratedAssemblyFileName == "Boo.Lang.Extensions.dll" 
