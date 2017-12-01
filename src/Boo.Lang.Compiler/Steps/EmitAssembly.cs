@@ -52,8 +52,8 @@ using Module = Boo.Lang.Compiler.Ast.Module;
 using System.Collections.Generic;
 using Method = Boo.Lang.Compiler.Ast.Method;
 using ExceptionHandler = Boo.Lang.Compiler.Ast.ExceptionHandler;
-//using Mono.Cecil;
-//using Mono.Cecil.Cil;
+using Mono.Cecil;
+using Mono.Cecil.Cil;
 using Label = System.Reflection.Emit.Label;
 using TypeDefinition = Boo.Lang.Compiler.Ast.TypeDefinition;
 using TypeReference = Boo.Lang.Compiler.Ast.TypeReference;
@@ -67,7 +67,7 @@ using ParameterAttributes = System.Reflection.ParameterAttributes;
 using EventAttributes = System.Reflection.EventAttributes;
 using MethodImplAttributes = System.Reflection.MethodImplAttributes;
 using GenericParameterAttributes = System.Reflection.GenericParameterAttributes;
-
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Boo.Lang.Compiler.Steps
 {
@@ -4498,7 +4498,7 @@ namespace Boo.Lang.Compiler.Steps
 
 			if (CompilerOutputType.Library != Parameters.OutputType)
 			{
-                //Method method = ContextAnnotations.GetEntryPoint(Context);
+                Method method = ContextAnnotations.GetEntryPoint(Context);
                 //if (null != method)
                 //{
                 //	MethodInfo entryPoint = Context.Parameters.GenerateInMemory
@@ -4510,8 +4510,35 @@ namespace Boo.Lang.Compiler.Steps
                 //{
                 //	Errors.Add(CompilerErrorFactory.NoEntryPoint());
                 //}
-                throw new NotImplementedException("_asmBuilder.SetEntryPoint");
-			}
+                //throw new NotImplementedException("_asmBuilder.SetEntryPoint");
+
+                using (MemoryStream stream = new MemoryStream())
+
+                {
+
+                    BinaryFormatter formatter = new BinaryFormatter();
+
+                    formatter.Serialize(stream, _moduleBuilder.Assembly);   //"Type 'System.Reflection.Emit.AssemblyBuilder' in Assembly 'System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e' is not marked as serializable."
+
+                    AssemblyDefinition assembly = AssemblyDefinition.ReadAssembly(stream);
+
+                    // This is the main module you need to work with
+                    var module = assembly.MainModule;
+
+                    if (null != method)
+                    {
+                        var entryPoint = Context.Parameters.GenerateInMemory
+                            ? module.GetTypes().First(x => x.FullName == method.DeclaringType.FullName).Methods.First(x => x.Name == method.Name && x.Attributes.HasFlag(Mono.Cecil.MethodAttributes.Public | Mono.Cecil.MethodAttributes.Static))
+                            : new MethodDefinition(method.Name, Mono.Cecil.MethodAttributes.Public | Mono.Cecil.MethodAttributes.Static, module.Import(typeof(void)));
+                        assembly.EntryPoint = entryPoint;
+                    }
+                    else
+                    {
+                        Errors.Add(CompilerErrorFactory.NoEntryPoint());
+                    }
+                }
+
+            }
 		}
 
 		void DefineModuleConstructor()
