@@ -49,7 +49,7 @@ static class Options:
 				console.PrintModules = true
 			elif arg == "--debug" or arg == "-debug" or arg == "-d":
 				debugOrWarnings=true
-				Debug.Listeners.Add(TextWriterTraceListener(Console.Out))
+				#Debug.Listeners.Add(TextWriterTraceListener(Console.Out))
 			elif arg == "-w":
 				debugOrWarnings=true
 				console.ShowWarnings = true

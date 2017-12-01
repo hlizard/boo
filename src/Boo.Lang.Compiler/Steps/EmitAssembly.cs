@@ -240,13 +240,15 @@ namespace Boo.Lang.Compiler.Steps
             }
 
             Console.WriteLine("compile success: " + _moduleBuilder.Assembly.FullName);
-            if (Context.GeneratedAssemblyFileName == "Boo.Lang.Extensions.dll")
+            if (Context.GeneratedAssemblyFileName == "Boo.Lang.Extensions.dll" 
+                || Context.GeneratedAssemblyFileName == "Boo.Lang.Useful.dll"
+                || Context.GeneratedAssemblyFileName == "Boo.Lang.PatternMatching.dll")
             {
-                Boo_Lang_Extensions_Assembly = _moduleBuilder.Assembly;
+                Extensions_Assemblys.Add(_moduleBuilder.Assembly);
             }
 		}
 
-        internal static Assembly Boo_Lang_Extensions_Assembly = null;
+        internal static List<Assembly> Extensions_Assemblys = new List<Assembly>();
 
         void GatherAssemblyAttributes()
 		{

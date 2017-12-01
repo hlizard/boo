@@ -258,14 +258,16 @@
 			<arg value="-nostdlib" />
 			<arg value="-srcdir:src/booish" />
 			<arg value="-srcdir:src/Boo.Lang.Interpreter" />
-			<arg value="-srcdir:src/Boo.Lang.PatternMatching" />
+			<!-- <arg value="-srcdir:src/Boo.Lang.PatternMatching" /> -->
 			<arg value="-srcdir:src/booish.mod.os" />
 			<!-- <arg value="-srcdir:src/Boo.Lang.Extensions" /> -->
-			<arg value="-srcdir:src/Boo.Lang.Useful" />
+			<!-- <arg value="-srcdir:src/Boo.Lang.Useful" /> -->
 			<arg value="-r:Boo.Lang.Parser.dll" />
 			<arg value="-r:Boo.Lang.Compiler.dll" />
 			<arg value="-r:Boo.Lang.dll" />
 			<arg value="-r:Boo.Lang.Extensions.dll" />
+			<arg value="-r:Boo.Lang.Useful.dll" />
+			<arg value="-r:Boo.Lang.PatternMatching.dll" />
 			<arg value="-r:System.Private.CoreLib.dll" />
 			<arg value="-r:System.Private.Xml.dll" />
 			<arg value="-r:System.Runtime.Extensions.dll" />
@@ -273,6 +275,9 @@
 			<arg value="-r:System.IO.FileSystem.dll" />
 			<arg value="-r:System.Console.dll" />
 			<arg value="-r:System.Collections.dll" />
+			<arg value="-r:System.Diagnostics.Process.dll" />
+			<arg value="-r:System.Diagnostics.TextWriterTraceListener.dll" />
+			<arg value="-r:System.Diagnostics.Debug.dll" />
 			<arg line='"-lib:${nant::get-base-directory()}"' />
 		</exec>
 		

@@ -40,6 +40,7 @@ using Boo.Lang.Compiler.TypeSystem;
 using Boo.Lang.Compiler.TypeSystem.Reflection;
 using Boo.Lang.Environments;
 using Boo.Lang.Resources;
+using System.Linq;
 
 namespace Boo.Lang.Compiler
 {
@@ -170,9 +171,9 @@ namespace Boo.Lang.Compiler
             //    return File.Exists(path) ? AssemblyReferenceFor(Assembly.LoadFrom(path)) : null;
             //}) ?? LoadAssembly(booLangExtensionsDll, false);
             
-            if (Steps.EmitAssembly.Boo_Lang_Extensions_Assembly != null)
+            if (Steps.EmitAssembly.Extensions_Assemblys.Any(x => x.FullName.StartsWith("Boo.Lang.Extensions,")))
             {
-                return AssemblyReferenceFor(Steps.EmitAssembly.Boo_Lang_Extensions_Assembly);
+                return AssemblyReferenceFor(Steps.EmitAssembly.Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.Extensions,")));
             }
             return null;
         }
@@ -216,7 +217,19 @@ namespace Boo.Lang.Compiler
             {
                 return TryToLoadExtensionsAssembly();
             }
-			var assembly = ForName(assemblyName, throwOnError);
+            else if (assemblyName == "Boo.Lang.Useful.dll")
+            {
+                var asmr = AssemblyReferenceFor(Steps.EmitAssembly.Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.Useful,")));
+                _compilerReferences.Add(asmr);
+                return asmr;
+            }
+            else if (assemblyName == "Boo.Lang.PatternMatching.dll")
+            {
+                var asmr = AssemblyReferenceFor(Steps.EmitAssembly.Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.PatternMatching,")));
+                _compilerReferences.Add(asmr);
+                return asmr;
+            }
+            var assembly = ForName(assemblyName, throwOnError);
 			return assembly != null ? AssemblyReferenceFor(assembly) : null;
 		}
 
