@@ -154,7 +154,11 @@ namespace Boo.Lang.Compiler
 			//System.Core
 			_compilerReferences.Add(LoadAssembly("System.Core", true));
 
-			Permissions.WithDiscoveryPermission<object>(() =>
+            _compilerReferences.Add(LoadAssembly("System.Linq", true));
+
+            _compilerReferences.Add(LoadAssembly("System.Console", true));
+
+            Permissions.WithDiscoveryPermission<object>(() =>
 			{
 				WriteTraceInfo("BOO LANG DLL: " + _booAssembly.Location);
 				WriteTraceInfo("BOO COMPILER EXTENSIONS DLL: " + (extensionsAssembly != null ? extensionsAssembly.ToString() : "NOT FOUND!"));

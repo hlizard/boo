@@ -278,6 +278,7 @@
 			<arg value="-r:System.Diagnostics.Process.dll" />
 			<arg value="-r:System.Diagnostics.TextWriterTraceListener.dll" />
 			<arg value="-r:System.Diagnostics.Debug.dll" />
+			<arg value="-r:System.Linq.dll" />
 			<arg line='"-lib:${nant::get-base-directory()}"' />
 		</exec>
 		
@@ -323,7 +324,7 @@
 			<arg value="-r:System.Console.dll" />
 			<arg line='"-lib:${nant::get-base-directory()}"' />
 		</exec> -->
-		<copy file="src/booish/booish.rsp" tofile="${build.dir}/booish.rsp"/>
+		<!-- <copy file="src/booish/booish.rsp" tofile="${build.dir}/booish.rsp"/> -->
 
 	</target>
 

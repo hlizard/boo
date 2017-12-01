@@ -39,6 +39,7 @@ import Boo.Lang.Compiler.TypeSystem.Core
 import Boo.Lang.Compiler.TypeSystem.Reflection
 import Boo.Lang.Compiler.TypeSystem.Internal
 import Boo.Lang.Compiler.IO
+import System.Linq.Enumerable from System.Linq
 
 class AbstractInterpreter:
 
@@ -236,7 +237,7 @@ class AbstractInterpreter:
 		
 		SetLastValue(null) if _rememberLastValue
 		
-		_compiler.Parameters.OutputType = CompilerOutputType.Auto
+		_compiler.Parameters.OutputType = CompilerOutputType.Library
 		result = _compiler.Run(cu)
 		return result if len(result.Errors)
 		
@@ -248,6 +249,7 @@ class AbstractInterpreter:
 		InitializeModuleInterpreter(asm, module)
 		
 		ExecuteEntryPoint(asm) if asm.EntryPoint is not null
+		ExecuteMain(asm) if asm.EntryPoint is null
 			
 		return result
 		
@@ -255,6 +257,17 @@ class AbstractInterpreter:
 		AppDomain.CurrentDomain.AssemblyResolve += AppDomain_AssemblyResolve
 		try:
 			asm.EntryPoint.Invoke(null, (null,)) 
+		ensure:
+			AppDomain.CurrentDomain.AssemblyResolve -= AppDomain_AssemblyResolve
+		
+	def ExecuteMain(asm as System.Reflection.Assembly):
+		AppDomain.CurrentDomain.AssemblyResolve += AppDomain_AssemblyResolve
+		try:
+			for t in asm.DefinedTypes:
+				if t.FullName.StartsWith("__input"):
+					main = t.DeclaredMethods.FirstOrDefault()
+					main.Invoke(null, (null,)) 
+					break
 		ensure:
 			AppDomain.CurrentDomain.AssemblyResolve -= AppDomain_AssemblyResolve
 			
