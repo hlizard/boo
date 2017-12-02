@@ -33,7 +33,7 @@
 	<property name="gsv.name" value="gtksourceview-1.0" />
 
 	<property name="bin.dir" value="bin"/>
-	<property name="build.dir" value="src/booc/bin/Release/PublishOutput" dynamic="False"/>
+	<property name="build.dir" value="src/booc/bin/Debug/netcoreapp2.0" dynamic="False"/>
 	<property name="distrobuild.dir" value="distrobuild"/>
 	<property name="docs.dir" value="docs" />
 	<property name="examples.dir" value="examples" />
@@ -249,7 +249,8 @@
 			</references>
 		</booc> -->
 
-		<exec program="${build.dir}/booc.Core.exe">
+		<exec program="dotnet" verbose="true">
+			<arg value="${build.dir}/booc.Core.dll"/>
 			<arg value="-v" />
 			<arg value="-noconfig" />
 			<arg value="-debug-" />
@@ -324,7 +325,7 @@
 			<arg value="-r:System.Console.dll" />
 			<arg line='"-lib:${nant::get-base-directory()}"' />
 		</exec> -->
-		<!-- <copy file="src/booish/booish.rsp" tofile="${build.dir}/booish.rsp"/> -->
+		<copy file="src/booish/booish.rsp" tofile="${build.dir}/booish.rsp"/>
 
 	</target>
 

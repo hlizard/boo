@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2017.2/system/resharper-host/local/Transient/ReSharperHost/v10/SolutionCaches/_Boo.Core.1922009069.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="Boo.Core.sln" t="IncludeFlat" />
+      <e p="Boo.Lang" t="IncludeRecursive">
+        <e p=".monolipse" t="Include" />
+        <e p="AbstractGenerator.cs" t="Include" />
+        <e p="AbstractGeneratorEnumerator.cs" t="Include" />
+        <e p="Boo.Lang.Core.csproj" t="IncludeRecursive" />
+        <e p="Boo.Lang.csproj.migration_in_place_backup" t="Include" />
+        <e p="BooComparer.cs" t="Include" />
+        <e p="BooHashCodeProvider.cs" t="Include" />
+        <e p="Builtins.cs" t="Include" />
+        <e p="DuckTypedAttribute.cs" t="Include" />
+        <e p="DynamicVariable.cs" t="Include" />
+        <e p="EnumeratorItemTypeAttribute.cs" t="Include" />
+        <e p="Environments" t="Include">
+          <e p="ActiveEnvironment.cs" t="Include" />
+          <e p="CachingEnvironment.cs" t="Include" />
+          <e p="ClosedEnvironment.cs" t="Include" />
+          <e p="DeferredEnvironment.cs" t="Include" />
+          <e p="EnvironmentBoundValue.cs" t="Include" />
+          <e p="EnvironmentChain.cs" t="Include" />
+          <e p="EnvironmentProvision.cs" t="Include" />
+          <e p="IEnvironment.cs" t="Include" />
+          <e p="InstantiatingEnvironment.cs" t="Include" />
+          <e p="My.cs" t="Include" />
+        </e>
+        <e p="Exceptions" t="Include">
+          <e p="UserRequestedCancellation.cs" t="Include" />
+        </e>
+        <e p="GenericGenerator.cs" t="Include" />
+        <e p="GenericGeneratorEnumerator.cs" t="Include" />
+        <e p="GenericList.cs" t="Include" />
+        <e p="Hash.cs" t="Include" />
+        <e p="ICallable.cs" t="Include" />
+        <e p="IQuackFu.cs" t="Include" />
+        <e p="IQuackFuMember.cs" t="Include" />
+        <e p="IReflectiveQuackFu.cs" t="Include" />
+        <e p="List.cs" t="Include" />
+        <e p="MetaAttribute.cs" t="Include" />
+        <e p="ModuleAttribute.cs" t="Include" />
+        <e p="Procedure.cs" t="Include" />
+        <e p="QuackFuMember.cs" t="Include" />
+        <e p="ResourceManager.cs" t="Include" />
+        <e p="Resources" t="Include">
+          <e p=".gitignore" t="Include" />
+          <e p="StringResources.cs" t="Include" />
+        </e>
+        <e p="Runtime" t="Include">
+          <e p="AssertionFailedException.cs" t="Include" />
+          <e p="CandidateMethod.cs" t="Include" />
+          <e p="DynamicDispatching" t="Include">
+            <e p="AbstractDispatcherFactory.cs" t="Include" />
+            <e p="DispatcherCache.cs" t="Include" />
+            <e p="DispatcherKey.cs" t="Include" />
+            <e p="Emitters" t="Include">
+              <e p="DispatcherEmitter.cs" t="Include" />
+              <e p="ExtensionMethodDispatcherEmitter.cs" t="Include" />
+              <e p="GetFieldEmitter.cs" t="Include" />
+              <e p="ImplicitConversionEmitter.cs" t="Include" />
+              <e p="MethodDispatcherEmitter.cs" t="Include" />
+              <e p="SetFieldEmitter.cs" t="Include" />
+              <e p="SetPropertyEmitter.cs" t="Include" />
+            </e>
+            <e p="MethodDispatcherFactory.cs" t="Include" />
+            <e p="NumericPromotions.cs" t="Include" />
+            <e p="PropertyDispatcherFactory.cs" t="Include" />
+            <e p="SetOrGet.cs" t="Include" />
+            <e p="SliceDispatcherFactory.cs" t="Include" />
+          </e>
+          <e p="ExtensionRegistry.cs" t="Include" />
+          <e p="ICoercible.cs" t="Include" />
+          <e p="MethodResolver.cs" t="Include" />
+          <e p="NumericTypes.cs" t="Include" />
+          <e p="RuntimeException.cs" t="Include" />
+          <e p="RuntimeServices.cs" t="Include" />
+          <e p="TextReaderEnumerator.cs" t="Include" />
+        </e>
+        <e p="TypeInferenceRuleAttribute.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard1.6" t="Include">
+              <e p="Boo.Lang.Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Boo.Lang.Compiler" t="IncludeRecursive">
+        <e p=".monolipse" t="Include" />
+        <e p="AbstractAstAttribute.cs" t="Include" />
+        <e p="AbstractAstGeneratorMacro.cs" t="Include" />
+        <e p="AbstractAstMacro.cs" t="Include" />
+        <e p="AbstractCompilerComponent.cs" t="Include" />
+        <e p="Ast" t="Include">
+          <e p="ArrayLiteralExpression.cs" t="Include" />
+          <e p="ArrayTypeReference.cs" t="Include" />
+          <e p="AstNodePredicates.cs" t="Include" />
+          <e p="AstUtil.cs" t="Include" />
+          <e p="AsyncBlockExpression.cs" t="Include" />
+          <e p="Attribute.cs" t="Include" />
+          <e p="AttributeCollection.cs" t="Include" />
+          <e p="AwaitExpression.cs" t="Include" />
+          <e p="BinaryExpression.cs" t="Include" />
+          <e p="BinaryOperatorKind.Generated.cs" t="Include" />
+          <e p="BinaryOperatorType.Generated.cs" t="Include" />
+          <e p="Block.cs" t="Include" />
+          <e p="BlockExpression.cs" t="Include" />
+          <e p="BoolLiteralExpression.cs" t="Include" />
+          <e p="BreakStatement.cs" t="Include" />
+          <e p="CallableDefinition.cs" t="Include" />
+          <e p="CallableTypeReference.cs" t="Include" />
+          <e p="CastExpression.cs" t="Include" />
+          <e p="CharLiteralExpression.cs" t="Include" />
+          <e p="ClassDefinition.cs" t="Include" />
+          <e p="CodeSerializer.cs" t="Include" />
+          <e p="CollectionInitializationExpression.cs" t="Include" />
+          <e p="CompileUnit.cs" t="Include" />
+          <e p="ConditionalExpression.cs" t="Include" />
+          <e p="ConditionalStatement.Generated.cs" t="Include" />
+          <e p="Constructor.cs" t="Include" />
+          <e p="ContinueStatement.cs" t="Include" />
+          <e p="CustomExpression.Generated.cs" t="Include" />
+          <e p="CustomStatement.Generated.cs" t="Include" />
+          <e p="Declaration.cs" t="Include" />
+          <e p="DeclarationCollection.cs" t="Include" />
+          <e p="DeclarationStatement.cs" t="Include" />
+          <e p="DepthFirstTransformer.cs" t="Include" />
+          <e p="DepthFirstVisitor.cs" t="Include" />
+          <e p="Destructor.cs" t="Include" />
+          <e p="DoubleLiteralExpression.cs" t="Include" />
+          <e p="EnumDefinition.cs" t="Include" />
+          <e p="EnumMember.cs" t="Include" />
+          <e p="Event.cs" t="Include" />
+          <e p="ExceptionHandler.cs" t="Include" />
+          <e p="ExceptionHandlerCollection.cs" t="Include" />
+          <e p="ExceptionHandlerFlags.Generated.cs" t="Include" />
+          <e p="ExplicitMemberInfo.cs" t="Include" />
+          <e p="Expression.cs" t="Include" />
+          <e p="ExpressionCollection.cs" t="Include" />
+          <e p="ExpressionInterpolationExpression.cs" t="Include" />
+          <e p="ExpressionPair.cs" t="Include" />
+          <e p="ExpressionPairCollection.cs" t="Include" />
+          <e p="ExpressionStatement.cs" t="Include" />
+          <e p="ExtendedGeneratorExpression.cs" t="Include" />
+          <e p="Field.cs" t="Include" />
+          <e p="ForStatement.cs" t="Include" />
+          <e p="GeneratorExpression.cs" t="Include" />
+          <e p="GeneratorExpressionCollection.cs" t="Include" />
+          <e p="GenericParameterConstraints.Generated.cs" t="Include" />
+          <e p="GenericParameterDeclaration.cs" t="Include" />
+          <e p="GenericParameterDeclarationCollection.cs" t="Include" />
+          <e p="GenericReferenceExpression.Generated.cs" t="Include" />
+          <e p="GenericTypeDefinitionReference.cs" t="Include" />
+          <e p="GenericTypeReference.cs" t="Include" />
+          <e p="GotoStatement.cs" t="Include" />
+          <e p="HashLiteralExpression.cs" t="Include" />
+          <e p="IAstVisitor.Generated.cs" t="Include" />
+          <e p="IExplicitMember.cs" t="Include" />
+          <e p="INodeWithArguments.cs" t="Include" />
+          <e p="INodeWithAttributes.cs" t="Include" />
+          <e p="INodeWithBody.cs" t="Include" />
+          <e p="INodeWithGenericParameters.cs" t="Include" />
+          <e p="INodeWithParameters.cs" t="Include" />
+          <e p="IfStatement.cs" t="Include" />
+          <e p="Impl" t="Include">
+            <e p="ArrayLiteralExpressionImpl.cs" t="Include" />
+            <e p="ArrayTypeReferenceImpl.cs" t="Include" />
+            <e p="AsyncBlockExpressionImpl.cs" t="Include" />
+            <e p="AttributeCollectionImpl.cs" t="Include" />
+            <e p="AttributeImpl.cs" t="Include" />
+            <e p="AwaitExpressionImpl.cs" t="Include" />
+            <e p="BinaryExpressionImpl.cs" t="Include" />
+            <e p="BlockExpressionImpl.cs" t="Include" />
+            <e p="BlockImpl.cs" t="Include" />
+            <e p="BoolLiteralExpressionImpl.cs" t="Include" />
+            <e p="BreakStatementImpl.cs" t="Include" />
+            <e p="CallableDefinitionImpl.cs" t="Include" />
+            <e p="CallableTypeReferenceImpl.cs" t="Include" />
+            <e p="CastExpressionImpl.cs" t="Include" />
+            <e p="CharLiteralExpressionImpl.cs" t="Include" />
+            <e p="ClassDefinitionImpl.cs" t="Include" />
+            <e p="CodeSerializer.cs" t="Include" />
+            <e p="CollectionInitializationExpressionImpl.cs" t="Include" />
+            <e p="CompileUnitImpl.cs" t="Include" />
+            <e p="ConditionalExpressionImpl.cs" t="Include" />
+            <e p="ConditionalStatementImpl.cs" t="Include" />
+            <e p="ConstructorImpl.cs" t="Include" />
+            <e p="ContinueStatementImpl.cs" t="Include" />
+            <e p="CustomExpressionImpl.cs" t="Include" />
+            <e p="CustomStatementImpl.cs" t="Include" />
+            <e p="DeclarationCollectionImpl.cs" t="Include" />
+            <e p="DeclarationImpl.cs" t="Include" />
+            <e p="DeclarationStatementImpl.cs" t="Include" />
+            <e p="DepthFirstGuide.cs" t="Include" />
+            <e p="DepthFirstTransformer.cs" t="Include" />
+            <e p="DepthFirstVisitor.cs" t="Include" />
+            <e p="DestructorImpl.cs" t="Include" />
+            <e p="DoubleLiteralExpressionImpl.cs" t="Include" />
+            <e p="EnumDefinitionImpl.cs" t="Include" />
+            <e p="EnumMemberImpl.cs" t="Include" />
+            <e p="EventImpl.cs" t="Include" />
+            <e p="ExceptionHandlerCollectionImpl.cs" t="Include" />
+            <e p="ExceptionHandlerImpl.cs" t="Include" />
+            <e p="ExplicitMemberInfoImpl.cs" t="Include" />
+            <e p="ExpressionCollectionImpl.cs" t="Include" />
+            <e p="ExpressionImpl.cs" t="Include" />
+            <e p="ExpressionInterpolationExpressionImpl.cs" t="Include" />
+            <e p="ExpressionPairCollectionImpl.cs" t="Include" />
+            <e p="ExpressionPairImpl.cs" t="Include" />
+            <e p="ExpressionStatementImpl.cs" t="Include" />
+            <e p="ExtendedGeneratorExpressionImpl.cs" t="Include" />
+            <e p="FastDepthFirstVisitor.cs" t="Include" />
+            <e p="FieldImpl.cs" t="Include" />
+            <e p="ForStatementImpl.cs" t="Include" />
+            <e p="GeneratorExpressionCollectionImpl.cs" t="Include" />
+            <e p="GeneratorExpressionImpl.cs" t="Include" />
+            <e p="GenericParameterDeclarationCollectionImpl.cs" t="Include" />
+            <e p="GenericParameterDeclarationImpl.cs" t="Include" />
+            <e p="GenericReferenceExpressionImpl.cs" t="Include" />
+            <e p="GenericTypeDefinitionReferenceImpl.cs" t="Include" />
+            <e p="GenericTypeReferenceImpl.cs" t="Include" />
+            <e p="GotoStatementImpl.cs" t="Include" />
+            <e p="HashLiteralExpressionImpl.cs" t="Include" />
+            <e p="IfStatementImpl.cs" t="Include" />
+            <e p="ImportCollectionImpl.cs" t="Include" />
+            <e p="ImportImpl.cs" t="Include" />
+            <e p="IntegerLiteralExpressionImpl.cs" t="Include" />
+            <e p="InterfaceDefinitionImpl.cs" t="Include" />
+            <e p="LabelStatementImpl.cs" t="Include" />
+            <e p="ListLiteralExpressionImpl.cs" t="Include" />
+            <e p="LiteralExpressionImpl.cs" t="Include" />
+            <e p="LocalCollectionImpl.cs" t="Include" />
+            <e p="LocalImpl.cs" t="Include" />
+            <e p="MacroStatementImpl.cs" t="Include" />
+            <e p="MemberReferenceExpressionImpl.cs" t="Include" />
+            <e p="MethodImpl.cs" t="Include" />
+            <e p="MethodInvocationExpressionImpl.cs" t="Include" />
+            <e p="ModuleCollectionImpl.cs" t="Include" />
+            <e p="ModuleImpl.cs" t="Include" />
+            <e p="NamespaceDeclarationImpl.cs" t="Include" />
+            <e p="NullLiteralExpressionImpl.cs" t="Include" />
+            <e p="ParameterDeclarationCollectionImpl.cs" t="Include" />
+            <e p="ParameterDeclarationImpl.cs" t="Include" />
+            <e p="PropertyImpl.cs" t="Include" />
+            <e p="QuasiquoteExpressionImpl.cs" t="Include" />
+            <e p="RELiteralExpressionImpl.cs" t="Include" />
+            <e p="RaiseStatementImpl.cs" t="Include" />
+            <e p="ReferenceExpressionImpl.cs" t="Include" />
+            <e p="ReturnStatementImpl.cs" t="Include" />
+            <e p="SelfLiteralExpressionImpl.cs" t="Include" />
+            <e p="SimpleTypeReferenceImpl.cs" t="Include" />
+            <e p="SliceCollectionImpl.cs" t="Include" />
+            <e p="SliceImpl.cs" t="Include" />
+            <e p="SlicingExpressionImpl.cs" t="Include" />
+            <e p="SpliceExpressionImpl.cs" t="Include" />
+            <e p="SpliceMemberReferenceExpressionImpl.cs" t="Include" />
+            <e p="SpliceParameterDeclarationImpl.cs" t="Include" />
+            <e p="SpliceTypeDefinitionBodyImpl.cs" t="Include" />
+            <e p="SpliceTypeMemberImpl.cs" t="Include" />
+            <e p="SpliceTypeReferenceImpl.cs" t="Include" />
+            <e p="StatementCollectionImpl.cs" t="Include" />
+            <e p="StatementImpl.cs" t="Include" />
+            <e p="StatementModifierImpl.cs" t="Include" />
+            <e p="StatementTypeMemberImpl.cs" t="Include" />
+            <e p="StringLiteralExpressionImpl.cs" t="Include" />
+            <e p="StructDefinitionImpl.cs" t="Include" />
+            <e p="SuperLiteralExpressionImpl.cs" t="Include" />
+            <e p="TimeSpanLiteralExpressionImpl.cs" t="Include" />
+            <e p="TryCastExpressionImpl.cs" t="Include" />
+            <e p="TryStatementImpl.cs" t="Include" />
+            <e p="TypeDefinitionCollectionImpl.cs" t="Include" />
+            <e p="TypeDefinitionImpl.cs" t="Include" />
+            <e p="TypeMemberCollectionImpl.cs" t="Include" />
+            <e p="TypeMemberImpl.cs" t="Include" />
+            <e p="TypeMemberStatementImpl.cs" t="Include" />
+            <e p="TypeReferenceCollectionImpl.cs" t="Include" />
+            <e p="TypeReferenceImpl.cs" t="Include" />
+            <e p="TypeofExpressionImpl.cs" t="Include" />
+            <e p="UnaryExpressionImpl.cs" t="Include" />
+            <e p="UnlessStatementImpl.cs" t="Include" />
+            <e p="UnpackStatementImpl.cs" t="Include" />
+            <e p="WhileStatementImpl.cs" t="Include" />
+            <e p="YieldStatementImpl.cs" t="Include" />
+          </e>
+          <e p="Import.cs" t="Include" />
+          <e p="ImportCollection.cs" t="Include" />
+          <e p="IntegerLiteralExpression.cs" t="Include" />
+          <e p="InterfaceDefinition.cs" t="Include" />
+          <e p="LabelStatement.cs" t="Include" />
+          <e p="LexicalInfo.cs" t="Include" />
+          <e p="ListLiteralExpression.cs" t="Include" />
+          <e p="LiteralExpression.cs" t="Include" />
+          <e p="Local.cs" t="Include" />
+          <e p="LocalCollection.cs" t="Include" />
+          <e p="MacroStatement.cs" t="Include" />
+          <e p="MemberReferenceExpression.cs" t="Include" />
+          <e p="Method.cs" t="Include" />
+          <e p="MethodImplementationFlags.Generated.cs" t="Include" />
+          <e p="MethodInvocationExpression.cs" t="Include" />
+          <e p="Module.cs" t="Include" />
+          <e p="ModuleCollection.cs" t="Include" />
+          <e p="NamespaceDeclaration.cs" t="Include" />
+          <e p="Node.cs" t="Include" />
+          <e p="NodeCollection.cs" t="Include" />
+          <e p="NodeExtensions.cs" t="Include" />
+          <e p="NodeType.Generated.cs" t="Include" />
+          <e p="NullLiteralExpression.cs" t="Include" />
+          <e p="OmittedExpression.cs" t="Include" />
+          <e p="ParameterDeclaration.cs" t="Include" />
+          <e p="ParameterDeclarationCollection.cs" t="Include" />
+          <e p="ParameterModifiers.Generated.cs" t="Include" />
+          <e p="Property.cs" t="Include" />
+          <e p="QuasiquoteExpression.cs" t="Include" />
+          <e p="RELiteralExpression.cs" t="Include" />
+          <e p="RaiseStatement.cs" t="Include" />
+          <e p="ReferenceExpression.cs" t="Include" />
+          <e p="ReturnStatement.cs" t="Include" />
+          <e p="SelfLiteralExpression.cs" t="Include" />
+          <e p="SimpleTypeReference.cs" t="Include" />
+          <e p="Slice.cs" t="Include" />
+          <e p="SliceCollection.cs" t="Include" />
+          <e p="SlicingExpression.cs" t="Include" />
+          <e p="SpliceExpression.cs" t="Include" />
+          <e p="SpliceMemberReferenceExpression.cs" t="Include" />
+          <e p="SpliceParameterDeclaration.cs" t="Include" />
+          <e p="SpliceTypeDefinitionBody.Generated.cs" t="Include" />
+          <e p="SpliceTypeDefinitionBody.cs" t="Include" />
+          <e p="SpliceTypeMember.cs" t="Include" />
+          <e p="SpliceTypeReference.cs" t="Include" />
+          <e p="Statement.cs" t="Include" />
+          <e p="StatementCollection.cs" t="Include" />
+          <e p="StatementModifier.cs" t="Include" />
+          <e p="StatementModifierType.Generated.cs" t="Include" />
+          <e p="StatementTypeMember.cs" t="Include" />
+          <e p="StringLiteralExpression.cs" t="Include" />
+          <e p="StructDefinition.cs" t="Include" />
+          <e p="SuperLiteralExpression.cs" t="Include" />
+          <e p="TimeSpanLiteralExpression.cs" t="Include" />
+          <e p="TryCastExpression.cs" t="Include" />
+          <e p="TryStatement.cs" t="Include" />
+          <e p="TypeDefinition.cs" t="Include" />
+          <e p="TypeDefinitionCollection.cs" t="Include" />
+          <e p="TypeMember.cs" t="Include" />
+          <e p="TypeMemberCollection.cs" t="Include" />
+          <e p="TypeMemberModifiers.Generated.cs" t="Include" />
+          <e p="TypeMemberStatement.Generated.cs" t="Include" />
+          <e p="TypeMemberStatement.cs" t="Include" />
+          <e p="TypeReference.cs" t="Include" />
+          <e p="TypeReferenceCollection.cs" t="Include" />
+          <e p="TypeofExpression.cs" t="Include" />
+          <e p="UnaryExpression.cs" t="Include" />
+          <e p="UnaryOperatorType.Generated.cs" t="Include" />
+          <e p="UnlessStatement.cs" t="Include" />
+          <e p="UnpackStatement.cs" t="Include" />
+          <e p="Visitors" t="Include">
+            <e p="BooPrinterVisitor.cs" t="Include" />
+            <e p="PseudoCSharpPrinterVisitor.cs" t="Include" />
+            <e p="TextEmitter.cs" t="Include" />
+            <e p="TreePrinterVisitor.cs" t="Include" />
+          </e>
+          <e p="WhileStatement.cs" t="Include" />
+          <e p="YieldStatement.cs" t="Include" />
+        </e>
+        <e p="Attributes" t="Include">
+          <e p="ExtensionAttribute.cs" t="Include" />
+          <e p="StrictModeAttribute.cs" t="Include" />
+        </e>
+        <e p="Boo.Lang.Compiler.Core.csproj" t="IncludeRecursive" />
+        <e p="BooCompiler.cs" t="Include" />
+        <e p="CancellableEventArgs.cs" t="Include" />
+        <e p="CompilerContext.cs" t="Include" />
+        <e p="CompilerError.cs" t="Include" />
+        <e p="CompilerErrorCollection.cs" t="Include" />
+        <e p="CompilerErrorFactory.cs" t="Include" />
+        <e p="CompilerInputCollection.cs" t="Include" />
+        <e p="CompilerOutputType.cs" t="Include" />
+        <e p="CompilerParameters.cs" t="Include" />
+        <e p="CompilerPipeline.cs" t="Include" />
+        <e p="CompilerReferenceCollection.cs" t="Include" />
+        <e p="CompilerResourceCollection.cs" t="Include" />
+        <e p="CompilerWarning.cs" t="Include" />
+        <e p="CompilerWarningCollection.cs" t="Include" />
+        <e p="CompilerWarningFactory.cs" t="Include" />
+        <e p="Environments" t="Include">
+          <e p="MyIdiom.cs" t="Include" />
+        </e>
+        <e p="IAstAttribute.cs" t="Include" />
+        <e p="IAstGeneratorMacro.cs" t="Include" />
+        <e p="IAstMacro.cs" t="Include" />
+        <e p="ICompilerComponent.cs" t="Include" />
+        <e p="ICompilerInput.cs" t="Include" />
+        <e p="ICompilerResource.cs" t="Include" />
+        <e p="ICompilerResourceWriter.cs" t="Include" />
+        <e p="ICompilerStep.cs" t="Include" />
+        <e p="IO" t="Include">
+          <e p="FileInput.cs" t="Include" />
+          <e p="ReaderInput.cs" t="Include" />
+          <e p="StringInput.cs" t="Include" />
+        </e>
+        <e p="LexicalInfoPreservingGeneratorMacro.cs" t="Include" />
+        <e p="LexicalInfoPreservingMacro.cs" t="Include" />
+        <e p="MetaProgramming" t="Include">
+          <e p="Compilation.cs" t="Include" />
+          <e p="CompilationErrorsException.cs" t="Include" />
+        </e>
+        <e p="PEFileKinds.cs" t="Include" />
+        <e p="Pipelines" t="Include">
+          <e p="CheckForErrors.cs" t="Include" />
+          <e p="Compile.cs" t="Include" />
+          <e p="CompileToBoo.cs" t="Include" />
+          <e p="CompileToMemory.cs" t="Include" />
+          <e p="ExpandMacros.cs" t="Include" />
+          <e p="Parse.cs" t="Include" />
+          <e p="ParseAndPrint.cs" t="Include" />
+          <e p="ParseAndPrintAst.cs" t="Include" />
+          <e p="ParseAndPrintXml.cs" t="Include" />
+          <e p="RemoveEmptyBlocks.cs" t="Include" />
+          <e p="ResolveExpressions.cs" t="Include" />
+          <e p="Run.cs" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="EmbeddedFileResource.cs" t="Include" />
+          <e p="FileResource.cs" t="Include" />
+          <e p="NamedEmbeddedFileResource.cs" t="Include" />
+          <e p="NamedFileResource.cs" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="ExtensionTagger.cs" t="Include" />
+          <e p="LanguageAmbiance.cs" t="Include" />
+          <e p="UniqueNameProvider.cs" t="Include" />
+        </e>
+        <e p="Steps" t="Include">
+          <e p="AbstractCompilerStep.cs" t="Include" />
+          <e p="AbstractFastVisitorCompilerStep.cs" t="Include" />
+          <e p="AbstractNamespaceSensitiveCompilerStep.cs" t="Include" />
+          <e p="AbstractNamespaceSensitiveVisitorCompilerStep.cs" t="Include" />
+          <e p="AbstractTransformerCompilerStep.cs" t="Include" />
+          <e p="AbstractVisitorCompilerStep.cs" t="Include" />
+          <e p="ActionStep.cs" t="Include" />
+          <e p="AstAnnotations.cs" t="Include" />
+          <e p="AsyncAwait" t="Include">
+            <e p="AsyncExceptionHandlerRewriter.cs" t="Include" />
+            <e p="AsyncMethodBuilderMemberCollection.cs" t="Include" />
+            <e p="AsyncMethodProcessor.cs" t="Include" />
+            <e p="AsyncTypeHelper.cs" t="Include" />
+            <e p="AwaitExpressionSpiller.cs" t="Include" />
+            <e p="LabelCollector.cs" t="Include" />
+            <e p="LocalReferenceCollector.cs" t="Include" />
+          </e>
+          <e p="BindBaseTypes.cs" t="Include" />
+          <e p="BindEnumMembers.cs" t="Include" />
+          <e p="BindGenericParameters.cs" t="Include" />
+          <e p="BindMethods.cs" t="Include" />
+          <e p="BindTypeDefinitions.cs" t="Include" />
+          <e p="BindTypeMembers.cs" t="Include" />
+          <e p="BranchChecking.cs" t="Include" />
+          <e p="CacheRegularExpressionsInStaticFields.cs" t="Include" />
+          <e p="CallableTypeElision.cs" t="Include" />
+          <e p="CheckAttributesUsage.cs" t="Include" />
+          <e p="CheckGenericConstraints.cs" t="Include" />
+          <e p="CheckIdentifiers.cs" t="Include" />
+          <e p="CheckLiteralValues.cs" t="Include" />
+          <e p="CheckMemberNames.cs" t="Include" />
+          <e p="CheckMemberTypes.cs" t="Include" />
+          <e p="CheckMembersProtectionLevel.cs" t="Include" />
+          <e p="CheckNeverUsedMembers.cs" t="Include" />
+          <e p="CheckSlicingExpressions.cs" t="Include" />
+          <e p="ClosureSignatureInferrer.cs" t="Include" />
+          <e p="ConstantFolding.cs" t="Include" />
+          <e p="ContextAnnotations.cs" t="Include" />
+          <e p="CreateAndSaveDocs.cs" t="Include" />
+          <e p="DetectInnerGenerics.cs" t="Include" />
+          <e p="DetectNotImplementedFeatureUsage.cs" t="Include" />
+          <e p="DumpReferences.cs" t="Include" />
+          <e p="EmitAssembly.cs" t="Include" />
+          <e p="EntityPredicates.cs" t="Include" />
+          <e p="ExpandAstLiterals.cs" t="Include" />
+          <e p="ExpandComplexSlicingExpressions.cs" t="Include" />
+          <e p="ExpandDuckTypedExpressions.cs" t="Include" />
+          <e p="ExpandPropertiesAndEvents.cs" t="Include" />
+          <e p="ExpandVarArgsMethodInvocations.cs" t="Include" />
+          <e p="ForeignReferenceCollector.cs" t="Include" />
+          <e p="Generators" t="Include">
+            <e p="GeneratorExpressionProcessor.cs" t="Include" />
+            <e p="GeneratorItemTypeInferrer.cs" t="Include" />
+            <e p="GeneratorMethodProcessor.cs" t="Include" />
+            <e p="GeneratorSkeleton.cs" t="Include" />
+            <e p="GeneratorSkeletonBuilder.cs" t="Include" />
+            <e p="GeneratorTypeReplacer.cs" t="Include" />
+          </e>
+          <e p="GenericConstraintsValidator.cs" t="Include" />
+          <e p="GenericTypeFinder.cs" t="Include" />
+          <e p="GenericTypeMapper.cs" t="Include" />
+          <e p="GotoOnTopLevelContinue.cs" t="Include" />
+          <e p="IAbstractCompilerStep.cs" t="Include" />
+          <e p="ImplementICallableOnCallableDefinitions.cs" t="Include" />
+          <e p="InheritNestedGenericParameters.cs" t="Include" />
+          <e p="Inheritance" t="Include">
+            <e p="BaseTypeResolution.cs" t="Include" />
+          </e>
+          <e p="InitializeNameResolutionService.cs" t="Include" />
+          <e p="InjectCallableConversions.cs" t="Include" />
+          <e p="InjectCastsAndConversions.cs" t="Include" />
+          <e p="InjectImplicitBooleanConversions.cs" t="Include" />
+          <e p="IntroduceGlobalNamespaces.cs" t="Include" />
+          <e p="IntroduceModuleClasses.cs" t="Include" />
+          <e p="MacroAndAttributeExpansion.cs" t="Include" />
+          <e p="MacroProcessing" t="Include">
+            <e p="BindAndApplyAttributes.cs" t="Include" />
+            <e p="MacroCompiler.cs" t="Include" />
+            <e p="MacroExpander.cs" t="Include" />
+            <e p="NodeGeneratorExpander.cs" t="Include" />
+            <e p="TypeMemberStatementBubbler.cs" t="Include" />
+          </e>
+          <e p="MergePartialTypes.cs" t="Include" />
+          <e p="MethodTrackingVisitorCompilerStep.cs" t="Include" />
+          <e p="NormalizeExpressions.cs" t="Include" />
+          <e p="NormalizeIterationStatements.cs" t="Include" />
+          <e p="NormalizeStatementModifiers.cs" t="Include" />
+          <e p="NormalizeTypeAndMemberDefinitions.cs" t="Include" />
+          <e p="OptimizeIterationStatements.cs" t="Include" />
+          <e p="PEVerify.cs" t="Include" />
+          <e p="Parsing.cs" t="Include" />
+          <e p="PreErrorChecking.cs" t="Include" />
+          <e p="PrintAst.cs" t="Include" />
+          <e p="PrintBoo.cs" t="Include" />
+          <e p="PrintErrors.cs" t="Include" />
+          <e p="PrintWarnings.cs" t="Include" />
+          <e p="ProcessAssignmentsToSpecialMembers.cs" t="Include" />
+          <e p="ProcessAssignmentsToValueTypeMembers.cs" t="Include" />
+          <e p="ProcessClosures.cs" t="Include" />
+          <e p="ProcessGenerators.cs" t="Include" />
+          <e p="ProcessGeneratorsAndAsyncMethods.cs" t="Include" />
+          <e p="ProcessInheritedAbstractMembers.cs" t="Include" />
+          <e p="ProcessMethodBodies.cs" t="Include" />
+          <e p="ProcessMethodBodiesWithDuckTyping.cs" t="Include" />
+          <e p="ProcessSharedLocals.cs" t="Include" />
+          <e p="ReifyTypes.cs" t="Include" />
+          <e p="RemoveDeadCode.cs" t="Include" />
+          <e p="ResolveImports.cs" t="Include" />
+          <e p="ResolveTypeReferences.cs" t="Include" />
+          <e p="RunAssembly.cs" t="Include" />
+          <e p="SafeAccessOperator.cs" t="Include" />
+          <e p="SelfEntity.cs" t="Include" />
+          <e p="SerializeToXml.cs" t="Include" />
+          <e p="StateMachine" t="Include">
+            <e p="MethodToStateMachineTransformer.cs" t="Include" />
+            <e p="StateMachineStates.cs" t="Include" />
+          </e>
+          <e p="StricterErrorChecking.cs" t="Include" />
+          <e p="TransformCallableDefinitions.cs" t="Include" />
+          <e p="TypeFinder.cs" t="Include" />
+          <e p="TypeInference.cs" t="Include" />
+          <e p="VerifyExtensionMethods.cs" t="Include" />
+        </e>
+        <e p="TypeSystem" t="Include">
+          <e p="Ambiguous.cs" t="Include" />
+          <e p="Builders" t="Include">
+            <e p="BooClassBuilder.cs" t="Include" />
+            <e p="BooMethodBuilder.cs" t="Include" />
+            <e p="CallableTypeBuilder.cs" t="Include" />
+            <e p="ICodeBuilder.cs" t="Include" />
+            <e p="ITypeReferenceFactory.cs" t="Include" />
+            <e p="MappedTypeReferenceFactory.cs" t="Include" />
+            <e p="StandardTypeReferenceFactory.cs" t="Include" />
+          </e>
+          <e p="BuiltinFunction.cs" t="Include" />
+          <e p="BuiltinFunctionType.cs" t="Include" />
+          <e p="CallableSignature.cs" t="Include" />
+          <e p="Core" t="Include">
+            <e p="AbstractType.cs" t="Include" />
+            <e p="AliasedNamespace.cs" t="Include" />
+            <e p="AnonymousCallableType.cs" t="Include" />
+            <e p="ArrayType.cs" t="Include" />
+            <e p="ArrayTypeCache.cs" t="Include" />
+            <e p="EmptyArrayType.cs" t="Include" />
+            <e p="Entities.cs" t="Include" />
+            <e p="EnvironmentProperty.cs" t="Include" />
+            <e p="GlobalNamespace.cs" t="Include" />
+            <e p="NamespaceDelegator.cs" t="Include" />
+            <e p="Namespaces.cs" t="Include" />
+            <e p="ResolvedNamespaces.cs" t="Include" />
+            <e p="SimpleNamespace.cs" t="Include" />
+          </e>
+          <e p="EntityExtensions.cs" t="Include" />
+          <e p="EntityType.cs" t="Include" />
+          <e p="Error.cs" t="Include" />
+          <e p="GenericTypeCollector.cs" t="Include" />
+          <e p="Generics" t="Include">
+            <e p="AbstractGenericParameter.cs" t="Include" />
+            <e p="GenericConstructedMethod.cs" t="Include" />
+            <e p="GenericConstructedType.cs" t="Include" />
+            <e p="GenericConstructionChecker.cs" t="Include" />
+            <e p="GenericMappedMembers.cs" t="Include" />
+            <e p="GenericMappedType.cs" t="Include" />
+            <e p="GenericMappedTypeParameter.cs" t="Include" />
+            <e p="GenericMapping.cs" t="Include" />
+            <e p="GenericParameterInferrer.cs" t="Include" />
+            <e p="GenericsServices.cs" t="Include" />
+            <e p="InferredType.cs" t="Include" />
+            <e p="MappedParameter.cs" t="Include" />
+            <e p="TypeInferrer.cs" t="Include" />
+            <e p="TypeMapper.cs" t="Include" />
+          </e>
+          <e p="IAccessibilityChecker.cs" t="Include" />
+          <e p="IAccessibleMember.cs" t="Include" />
+          <e p="IArrayType.cs" t="Include" />
+          <e p="ICallableType.cs" t="Include" />
+          <e p="ICompileUnit.cs" t="Include" />
+          <e p="IConstructedMethodInfo.cs" t="Include" />
+          <e p="IConstructedTypeInfo.cs" t="Include" />
+          <e p="IConstructor.cs" t="Include" />
+          <e p="IDestructor.cs" t="Include" />
+          <e p="IEntity.cs" t="Include" />
+          <e p="IEntityWithAttributes.cs" t="Include" />
+          <e p="IEntityWithParameters.cs" t="Include" />
+          <e p="IEvent.cs" t="Include" />
+          <e p="IExtensionEnabled.cs" t="Include" />
+          <e p="IExternalEntity.cs" t="Include" />
+          <e p="IField.cs" t="Include" />
+          <e p="IGenericMethodInfo.cs" t="Include" />
+          <e p="IGenericParameter.cs" t="Include" />
+          <e p="IGenericTypeInfo.cs" t="Include" />
+          <e p="IInternalEntity.cs" t="Include" />
+          <e p="ILocalEntity.cs" t="Include" />
+          <e p="IMember.cs" t="Include" />
+          <e p="IMethod.cs" t="Include" />
+          <e p="IMethodBase.cs" t="Include" />
+          <e p="INameSpace.cs" t="Include" />
+          <e p="IOverridableMember.cs" t="Include" />
+          <e p="IParameter.cs" t="Include" />
+          <e p="IProperty.cs" t="Include" />
+          <e p="IType.cs" t="Include" />
+          <e p="ITypedEntity.cs" t="Include" />
+          <e p="Internal" t="Include">
+            <e p="AbstractInternalType.cs" t="Include" />
+            <e p="AbstractLocalEntity.cs" t="Include" />
+            <e p="CompileUnitNamespace.cs" t="Include" />
+            <e p="DeclarationsNamespace.cs" t="Include" />
+            <e p="ImportAnnotations.cs" t="Include" />
+            <e p="ImportedNamespace.cs" t="Include" />
+            <e p="InternalCallableType.cs" t="Include" />
+            <e p="InternalClass.cs" t="Include" />
+            <e p="InternalCompileUnit.cs" t="Include" />
+            <e p="InternalConstructor.cs" t="Include" />
+            <e p="InternalEntity.cs" t="Include" />
+            <e p="InternalEnum.cs" t="Include" />
+            <e p="InternalEnumMember.cs" t="Include" />
+            <e p="InternalEvent.cs" t="Include" />
+            <e p="InternalField.cs" t="Include" />
+            <e p="InternalGenericMapping.cs" t="Include" />
+            <e p="InternalGenericMethod.cs" t="Include" />
+            <e p="InternalGenericParameter.cs" t="Include" />
+            <e p="InternalInterface.cs" t="Include" />
+            <e p="InternalLabel.cs" t="Include" />
+            <e p="InternalLocal.cs" t="Include" />
+            <e p="InternalMethod.cs" t="Include" />
+            <e p="InternalModule.cs" t="Include" />
+            <e p="InternalParameter.cs" t="Include" />
+            <e p="InternalProperty.cs" t="Include" />
+            <e p="InternalTypeSystemProvider.cs" t="Include" />
+            <e p="PartialModuleNamespace.cs" t="Include" />
+          </e>
+          <e p="Null.cs" t="Include" />
+          <e p="Reflection" t="Include">
+            <e p="AbstractExternalGenericInfo.cs" t="Include" />
+            <e p="AssemblyEqualityComparer.cs" t="Include" />
+            <e p="AssemblyReference.cs" t="Include" />
+            <e p="CachedMethod.cs" t="Include" />
+            <e p="ExternalCallableType.cs" t="Include" />
+            <e p="ExternalConstructedMethodInfo.cs" t="Include" />
+            <e p="ExternalConstructedTypeInfo.cs" t="Include" />
+            <e p="ExternalConstructor.cs" t="Include" />
+            <e p="ExternalEntity.cs" t="Include" />
+            <e p="ExternalEvent.cs" t="Include" />
+            <e p="ExternalField.cs" t="Include" />
+            <e p="ExternalGenericMapping.cs" t="Include" />
+            <e p="ExternalGenericMethodInfo.cs" t="Include" />
+            <e p="ExternalGenericParameter.cs" t="Include" />
+            <e p="ExternalGenericTypeInfo.cs" t="Include" />
+            <e p="ExternalMethod.cs" t="Include" />
+            <e p="ExternalParameter.cs" t="Include" />
+            <e p="ExternalProperty.cs" t="Include" />
+            <e p="ExternalType.cs" t="Include" />
+            <e p="IAssemblyReference.cs" t="Include" />
+            <e p="IReflectionTypeSystemProvider.cs" t="Include" />
+            <e p="ReflectionNamespace.cs" t="Include" />
+            <e p="ReflectionNamespaceBuilder.cs" t="Include" />
+            <e p="ReflectionTypeSystemProvider.cs" t="Include" />
+          </e>
+          <e p="Services" t="Include">
+            <e p="AccessibilityChecker.cs" t="Include" />
+            <e p="AnonymousCallablesManager.cs" t="Include" />
+            <e p="AsyncHelper.cs" t="Include" />
+            <e p="BooCodeBuilder.cs" t="Include" />
+            <e p="CallableResolutionService.cs" t="Include" />
+            <e p="CodeReifier.cs" t="Include" />
+            <e p="CompilerErrorEmitter.cs" t="Include" />
+            <e p="CurrentScope.cs" t="Include" />
+            <e p="DowncastPermissions.cs" t="Include" />
+            <e p="EntityFormatter.cs" t="Include" />
+            <e p="InvocationTypeInferenceRules.cs" t="Include" />
+            <e p="MemberCollector.cs" t="Include" />
+            <e p="MetadataUtil.cs" t="Include" />
+            <e p="NameResolutionService.cs" t="Include" />
+            <e p="RuntimeMethodCache.cs" t="Include" />
+            <e p="TypeChecker.cs" t="Include" />
+            <e p="TypeCompatibilityRules.cs" t="Include" />
+            <e p="TypeSystemServices.cs" t="Include" />
+          </e>
+          <e p="TypeCollector.cs" t="Include" />
+          <e p="TypeExtensions.cs" t="Include" />
+          <e p="TypeSystemExtensions.cs" t="Include" />
+          <e p="TypeVisitor.cs" t="Include" />
+          <e p="Types.cs" t="Include" />
+          <e p="Unknown.cs" t="Include" />
+          <e p="Variance.cs" t="Include" />
+        </e>
+        <e p="Util" t="Include">
+          <e p="ArrayEqualityComparer.cs" t="Include" />
+          <e p="MemoizedFunction.cs" t="Include" />
+          <e p="Methods.cs" t="Include" />
+          <e p="Permissions.cs" t="Include" />
+          <e p="Properties.cs" t="Include" />
+          <e p="Set.cs" t="Include" />
+          <e p="StringUtilities.cs" t="Include" />
+          <e p="TypeUtilities.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="Boo.Lang.Compiler.Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Boo.Lang.Parser" t="IncludeRecursive">
+        <e p=".monolipse" t="Include" />
+        <e p="Boo.Lang.Parser.Core.csproj" t="IncludeRecursive" />
+        <e p="BooExpressionLexer.cs" t="Include" />
+        <e p="BooExpressionLexerTokenTypes.cs" t="Include" />
+        <e p="BooExpressionLexerTokenTypes.txt" t="Include" />
+        <e p="BooLexer.cs" t="Include" />
+        <e p="BooParser.cs" t="Include" />
+        <e p="BooParserBase.cs" t="Include" />
+        <e p="BooParsingStep.cs" t="Include" />
+        <e p="BooToken.cs" t="Include" />
+        <e p="BooTokenTypes.cs" t="Include" />
+        <e p="BooTokenTypes.txt" t="Include" />
+        <e p="CodeFactory.cs" t="Include" />
+        <e p="DocStringFormatter.cs" t="Include" />
+        <e p="ErrorPattern.cs" t="Include" />
+        <e p="GeneratedErrorPatterns.cs" t="Include" />
+        <e p="OperatorParser.cs" t="Include" />
+        <e p="ParserSettings.cs" t="Include" />
+        <e p="PrimitiveParser.cs" t="Include" />
+        <e p="SourceLocationFactory.cs" t="Include" />
+        <e p="Util" t="Include">
+          <e p="EndTokenStreamFilter.cs" t="Include" />
+          <e p="IndentTokenStreamFilter.cs" t="Include" />
+          <e p="Readers.cs" t="Include" />
+          <e p="TokenStreamRecorder.cs" t="Include" />
+          <e p="WSATokenStreamFilter.cs" t="Include" />
+        </e>
+        <e p="WSABooParser.cs" t="Include" />
+        <e p="WSABooParsingStep.cs" t="Include" />
+        <e p="antlr" t="Include">
+          <e p="SupportClass.cs" t="Include" />
+          <e p="antlr" t="Include">
+            <e p="ANTLRException.cs" t="Include" />
+            <e p="ANTLRPanicException.cs" t="Include" />
+            <e p="ASTFactory.cs" t="Include" />
+            <e p="ASTNULLType.cs" t="Include" />
+            <e p="ASTNodeCreator.cs" t="Include" />
+            <e p="ASTPair.cs" t="Include" />
+            <e p="ASTVisitor.cs" t="Include" />
+            <e p="BaseAST.cs" t="Include" />
+            <e p="ByteBuffer.cs" t="Include" />
+            <e p="CharBuffer.cs" t="Include" />
+            <e p="CharQueue.cs" t="Include" />
+            <e p="CharScanner.cs" t="Include" />
+            <e p="CharStreamException.cs" t="Include" />
+            <e p="CharStreamIOException.cs" t="Include" />
+            <e p="CommonAST.cs" t="Include" />
+            <e p="CommonASTWithHiddenTokens.cs" t="Include" />
+            <e p="CommonHiddenStreamToken.cs" t="Include" />
+            <e p="CommonToken.cs" t="Include" />
+            <e p="DefaultFileLineFormatter.cs" t="Include" />
+            <e p="DumpASTVisitor.cs" t="Include" />
+            <e p="FileLineFormatter.cs" t="Include" />
+            <e p="IHiddenStreamToken.cs" t="Include" />
+            <e p="IToken.cs" t="Include" />
+            <e p="InputBuffer.cs" t="Include" />
+            <e p="LLkParser.cs" t="Include" />
+            <e p="LexerSharedInputState.cs" t="Include" />
+            <e p="MismatchedCharException.cs" t="Include" />
+            <e p="MismatchedTokenException.cs" t="Include" />
+            <e p="NoViableAltException.cs" t="Include" />
+            <e p="NoViableAltForCharException.cs" t="Include" />
+            <e p="ParseTree.cs" t="Include" />
+            <e p="ParseTreeRule.cs" t="Include" />
+            <e p="ParseTreeToken.cs" t="Include" />
+            <e p="Parser.cs" t="Include" />
+            <e p="ParserSharedInputState.cs" t="Include" />
+            <e p="RecognitionException.cs" t="Include" />
+            <e p="SemanticException.cs" t="Include" />
+            <e p="StringUtils.cs" t="Include" />
+            <e p="Token.cs" t="Include" />
+            <e p="TokenBuffer.cs" t="Include" />
+            <e p="TokenCreator.cs" t="Include" />
+            <e p="TokenQueue.cs" t="Include" />
+            <e p="TokenStream.cs" t="Include" />
+            <e p="TokenStreamBasicFilter.cs" t="Include" />
+            <e p="TokenStreamException.cs" t="Include" />
+            <e p="TokenStreamHiddenTokenFilter.cs" t="Include" />
+            <e p="TokenStreamIOException.cs" t="Include" />
+            <e p="TokenStreamRecognitionException.cs" t="Include" />
+            <e p="TokenStreamRetryException.cs" t="Include" />
+            <e p="TokenStreamRewriteEngine.cs" t="Include" />
+            <e p="TokenStreamSelector.cs" t="Include" />
+            <e p="TokenWithIndex.cs" t="Include" />
+            <e p="TreeParser.cs" t="Include" />
+            <e p="TreeParserSharedInputState.cs" t="Include" />
+          </e>
+          <e p="antlr.collections" t="Include">
+            <e p="AST.cs" t="Include" />
+          </e>
+          <e p="antlr.collections.impl" t="Include">
+            <e p="ASTArray.cs" t="Include" />
+            <e p="BitSet.cs" t="Include" />
+          </e>
+          <e p="antlr.debug" t="Include">
+            <e p="ANTLREventArgs.cs" t="Include" />
+            <e p="DebuggingCharScanner.cs" t="Include" />
+            <e p="DebuggingInputBuffer.cs" t="Include" />
+            <e p="DebuggingParser.cs" t="Include" />
+            <e p="GuessingEventArgs.cs" t="Include" />
+            <e p="ICharScannerDebugSubject.cs" t="Include" />
+            <e p="IDebugSubject.cs" t="Include" />
+            <e p="IParserDebugSubject.cs" t="Include" />
+            <e p="InputBufferEventArgs.cs" t="Include" />
+            <e p="InputBufferEventSupport.cs" t="Include" />
+            <e p="InputBufferListener.cs" t="Include" />
+            <e p="InputBufferListenerBase.cs" t="Include" />
+            <e p="InputBufferReporter.cs" t="Include" />
+            <e p="LLkDebuggingParser.cs" t="Include" />
+            <e p="Listener.cs" t="Include" />
+            <e p="MessageEventArgs.cs" t="Include" />
+            <e p="MessageListener.cs" t="Include" />
+            <e p="MessageListenerBase.cs" t="Include" />
+            <e p="NewLineEventArgs.cs" t="Include" />
+            <e p="NewLineListener.cs" t="Include" />
+            <e p="ParseTreeDebugParser.cs" t="Include" />
+            <e p="ParserController.cs" t="Include" />
+            <e p="ParserEventSupport.cs" t="Include" />
+            <e p="ParserListener.cs" t="Include" />
+            <e p="ParserListenerBase.cs" t="Include" />
+            <e p="ParserMatchEventArgs.cs" t="Include" />
+            <e p="ParserMatchListener.cs" t="Include" />
+            <e p="ParserMatchListenerBase.cs" t="Include" />
+            <e p="ParserReporter.cs" t="Include" />
+            <e p="ParserTokenEventArgs.cs" t="Include" />
+            <e p="ParserTokenListener.cs" t="Include" />
+            <e p="ParserTokenListenerBase.cs" t="Include" />
+            <e p="ScannerEventSupport.cs" t="Include" />
+            <e p="SemanticPredicateEventArgs.cs" t="Include" />
+            <e p="SemanticPredicateListener.cs" t="Include" />
+            <e p="SemanticPredicateListenerBase.cs" t="Include" />
+            <e p="SyntacticPredicateEventArgs.cs" t="Include" />
+            <e p="SyntacticPredicateListener.cs" t="Include" />
+            <e p="SyntacticPredicateListenerBase.cs" t="Include" />
+            <e p="TraceEventArgs.cs" t="Include" />
+            <e p="TraceListener.cs" t="Include" />
+            <e p="TraceListenerBase.cs" t="Include" />
+            <e p="Tracer.cs" t="Include" />
+          </e>
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="boo.g" t="Include" />
+        <e p="booel.g" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="Boo.Lang.Parser.Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="wsaboo.g" t="Include" />
+      </e>
+      <e p="Solution Items" t="Include" />
+      <e p="booc" t="IncludeRecursive">
+        <e p="App.cs" t="Include" />
+        <e p="App.ico" t="Include" />
+        <e p="CommandLineParser.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="PublishProfiles" t="Include">
+            <e p="FolderProfile.pubxml" t="Include" />
+          </e>
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="booc.Core.csproj" t="IncludeRecursive" />
+        <e p="booc.rsp" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.0" t="Include">
+              <e p="booc.Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="readme.txt" t="Include" />
+    </e>
+  </component>
+</project>
