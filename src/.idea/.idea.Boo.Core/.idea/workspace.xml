@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8db915ed-2ca2-4a03-890f-33fbe16985e4" name="Default" comment="linux build &amp; run success">
+    <list default="true" id="8db915ed-2ca2-4a03-890f-33fbe16985e4" name="Default" comment="fix booish">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Boo.Core/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Boo.Core/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Boo.Lang.Compiler/Steps/EmitAssembly.cs" afterPath="$PROJECT_DIR$/Boo.Lang.Compiler/Steps/EmitAssembly.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Boo.Lang.Interpreter/AbstractInterpreter.boo" afterPath="$PROJECT_DIR$/Boo.Lang.Interpreter/AbstractInterpreter.boo" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -1063,7 +1061,7 @@
       <updated>1512149250914</updated>
       <workItem from="1512149257150" duration="4268000" />
       <workItem from="1512178789643" duration="14045000" />
-      <workItem from="1512268292744" duration="5125000" />
+      <workItem from="1512268292744" duration="5281000" />
     </task>
     <task id="LOCAL-00001" summary="linux build &amp; run success">
       <created>1512213006674</created>
@@ -1072,11 +1070,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512213006674</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix booish">
+      <created>1512275819552</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1512275819552</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23438000" />
+    <option name="totallyTimeSpent" value="23594000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1089,7 +1094,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="-1" width="1286" height="1004" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1125,7 +1129,8 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="linux build &amp; run success" />
-    <option name="LAST_COMMIT_MESSAGE" value="linux build &amp; run success" />
+    <MESSAGE value="fix booish" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix booish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
