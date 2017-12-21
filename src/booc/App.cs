@@ -64,10 +64,55 @@ namespace booc
 				var boolibdir = ConfigurationManager.AppSettings["boolibdir"];
 				
 				var libOption = string.IsNullOrEmpty(boolibdir) ? "" : "-lib:" + boolibdir;
-				
-				new App().Run(string.Format(@"-target:library -debug- -v -noconfig -o:Boo.Lang.Extensions.dll -srcdir:{0}src/Boo.Lang.Extensions -r:Boo.Lang.Compiler.dll -r:Boo.Lang.dll -r:System.Private.CoreLib.dll {1}", boosrcroot, libOption).Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
-				new App().Run(string.Format(@"-target:library -debug- -v -noconfig -o:Boo.Lang.Useful.dll -srcdir:{0}src/Boo.Lang.Useful -r:Boo.Lang.Parser.dll -r:Boo.Lang.Compiler.dll -r:Boo.Lang.dll -r:System.Private.CoreLib.dll -r:System.Private.Xml.dll -r:System.Private.Uri.dll -r:System.Runtime.Extensions.dll -r:System.Runtime.dll -r:System.IO.FileSystem.dll -r:System.Console.dll -r:System.Collections.dll {1}", boosrcroot, libOption).Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
-				new App().Run(string.Format(@"-target:library -debug- -v -noconfig -o:Boo.Lang.PatternMatching.dll -srcdir:{0}src/Boo.Lang.PatternMatching -r:Boo.Lang.Useful.dll -r:Boo.Lang.Compiler.dll -r:Boo.Lang.dll -r:System.Private.CoreLib.dll {1}", boosrcroot, libOption).Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
+
+                //compile assembly Boo.Lang.Extensions
+                new App().Run(new string[] {
+                    "-target:library",
+                    "-debug-",
+                    "-v",
+                    "-noconfig",
+                    "-o:Boo.Lang.Extensions.dll",
+                    "-srcdir:" + boosrcroot + "src/Boo.Lang.Extensions",
+                    "-r:Boo.Lang.Compiler.dll",
+                    "-r:Boo.Lang.dll",
+                    "-r:System.Private.CoreLib.dll",
+                    libOption
+                });
+                //compile assembly Boo.Lang.Useful
+                new App().Run(new string[] {
+                    "-target:library",
+                    "-debug-",
+                    "-v",
+                    "-noconfig",
+                    "-o:Boo.Lang.Useful.dll",
+                    "-srcdir:" + boosrcroot + "src/Boo.Lang.Useful",
+                    "-r:Boo.Lang.Parser.dll",
+                    "-r:Boo.Lang.Compiler.dll",
+                    "-r:Boo.Lang.dll",
+                    "-r:System.Private.CoreLib.dll",
+                    "-r:System.Private.Xml.dll",
+                    "-r:System.Private.Uri.dll",
+                    "-r:System.Runtime.Extensions.dll",
+                    "-r:System.Runtime.dll",
+                    "-r:System.IO.FileSystem.dll",
+                    "-r:System.Console.dll",
+                    "-r:System.Collections.dll",
+                    libOption
+                });
+                //compile assembly Boo.Lang.PatternMatching
+                new App().Run(new string[] {
+                    "-target:library",
+                    "-debug-",
+                    "-v",
+                    "-noconfig",
+                    "-o:Boo.Lang.PatternMatching.dll",
+                    "-srcdir:" + boosrcroot + "src/Boo.Lang.PatternMatching",
+                    "-r:Boo.Lang.Useful.dll",
+                    "-r:Boo.Lang.Compiler.dll",
+                    "-r:Boo.Lang.dll",
+                    "-r:System.Private.CoreLib.dll",
+                    libOption
+                });
 			}
 			return new App().Run(args);
 		}

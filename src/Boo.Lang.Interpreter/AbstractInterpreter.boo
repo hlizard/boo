@@ -239,14 +239,12 @@ class AbstractInterpreter:
 		
 		_compiler.Parameters.OutputType = CompilerOutputType.Library
 		result = _compiler.Run(cu)
-		print "_compiler.Run"
 		return result if len(result.Errors)
 		
-		print "RecordImports"
 		RecordImports(savedImports)
 		
 		asm = result.GeneratedAssembly
-		print asm.FullName
+		debug asm.FullName
 		_compiler.Parameters.References.Add(asm)
 		
 		InitializeModuleInterpreter(asm, module)
@@ -268,7 +266,7 @@ class AbstractInterpreter:
 		try:
 			for t in asm.DefinedTypes:
 				if t.FullName.StartsWith("__input"):
-					main = t.DeclaredMethods.FirstOrDefault()
+					main = t.DeclaredMethods.Single()
 					main.Invoke(null, (null,)) 
 					break
 		ensure:
@@ -451,15 +449,14 @@ class AbstractInterpreter:
 			
 		InEntryPoint:
 			get:
-				print "CurrentMethod:", CurrentMethod
+				debug "ProcessVariableDeclarations.InEntryPoint.CurrentMethod:", CurrentMethod
 				#return CurrentMethod is _entryPoint
 				return CurrentMethod.ToString().EndsWith("Module.Main")
 	
 		override def Initialize(context as CompilerContext):
-			print "ProcessVariableDeclarations"
 			super(context)
 			_entryPoint = Steps.ContextAnnotations.GetEntryPoint(Context)			
-			print "_entryPoint:", _entryPoint
+			debug "ProcessVariableDeclarations.Initialize._entryPoint:", _entryPoint
 			
 		override def LeaveExpressionStatement(node as ExpressionStatement):
 			# force standalone method references types to be completely

@@ -244,7 +244,7 @@ namespace Boo.Lang.Compiler.Steps
                 {
                     if(t.FullName == "BooishModule")
                     {
-                        var main = t.DeclaredMethods.FirstOrDefault();
+                        var main = t.DeclaredMethods.Single();
                         main.Invoke(null, new object[] { new string[] { "-d", "-w" } });
                         break;
                     }
