@@ -630,9 +630,13 @@ namespace booc
 		}
 
 		private void ConfigurePipeline()
-		{
-			var pipeline = _pipelineName != null ? CompilerPipeline.GetPipeline(_pipelineName) : new CompileToMemory();
-			_options.Pipeline = pipeline;
+        {
+#if !NETCOREAPP2_0
+            var pipeline = _pipelineName != null ? CompilerPipeline.GetPipeline(_pipelineName) : new CompileToFile();
+#else
+            var pipeline = _pipelineName != null ? CompilerPipeline.GetPipeline(_pipelineName) : new CompileToMemory();
+#endif
+            _options.Pipeline = pipeline;
 			if (_debugSteps)
 			{
 				var stepDebugger = new StepDebugger();

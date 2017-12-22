@@ -154,9 +154,11 @@ namespace Boo.Lang.Compiler
 			//System.Core
 			_compilerReferences.Add(LoadAssembly("System.Core", true));
 
+#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
             _compilerReferences.Add(LoadAssembly("System.Linq", true));
 
             _compilerReferences.Add(LoadAssembly("System.Console", true));
+#endif
 
             Permissions.WithDiscoveryPermission<object>(() =>
 			{
@@ -169,17 +171,20 @@ namespace Boo.Lang.Compiler
 		private IAssemblyReference TryToLoadExtensionsAssembly()
 		{
 			const string booLangExtensionsDll = "Boo.Lang.Extensions.dll";
-            //return Permissions.WithDiscoveryPermission(() =>
-            //{
-            //    var path = Path.Combine(Path.GetDirectoryName(_booAssembly.Location), booLangExtensionsDll);
-            //    return File.Exists(path) ? AssemblyReferenceFor(Assembly.LoadFrom(path)) : null;
-            //}) ?? LoadAssembly(booLangExtensionsDll, false);
-            
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+            return Permissions.WithDiscoveryPermission(() =>
+            {
+                var path = Path.Combine(Path.GetDirectoryName(_booAssembly.Location), booLangExtensionsDll);
+                return File.Exists(path) ? AssemblyReferenceFor(Assembly.LoadFrom(path)) : null;
+            }) ?? LoadAssembly(booLangExtensionsDll, false);
+
+#else
             if (Steps.EmitAssembly.Extensions_Assemblys.Any(x => x.FullName.StartsWith("Boo.Lang.Extensions,")))
             {
                 return AssemblyReferenceFor(Steps.EmitAssembly.Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.Extensions,")));
             }
             return null;
+#endif
         }
 
 		public Assembly BooAssembly
@@ -216,7 +221,8 @@ namespace Boo.Lang.Compiler
 		}
 
 		public IAssemblyReference LoadAssembly(string assemblyName, bool throwOnError)
-		{
+        {
+#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
             if(assemblyName == "Boo.Lang.Extensions.dll")
             {
                 return TryToLoadExtensionsAssembly();
@@ -233,6 +239,7 @@ namespace Boo.Lang.Compiler
                 _compilerReferences.Add(asmr);
                 return asmr;
             }
+#endif
             var assembly = ForName(assemblyName, throwOnError);
 			return assembly != null ? AssemblyReferenceFor(assembly) : null;
 		}

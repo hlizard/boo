@@ -52,22 +52,6 @@ using Module = Boo.Lang.Compiler.Ast.Module;
 using System.Collections.Generic;
 using Method = Boo.Lang.Compiler.Ast.Method;
 using ExceptionHandler = Boo.Lang.Compiler.Ast.ExceptionHandler;
-using Mono.Cecil;
-using Mono.Cecil.Cil;
-using Label = System.Reflection.Emit.Label;
-using TypeDefinition = Boo.Lang.Compiler.Ast.TypeDefinition;
-using TypeReference = Boo.Lang.Compiler.Ast.TypeReference;
-using OpCodes = System.Reflection.Emit.OpCodes;
-using OpCode = System.Reflection.Emit.OpCode;
-using FieldAttributes = System.Reflection.FieldAttributes;
-using MethodAttributes = System.Reflection.MethodAttributes;
-using PropertyAttributes = System.Reflection.PropertyAttributes;
-using TypeAttributes = System.Reflection.TypeAttributes;
-using ParameterAttributes = System.Reflection.ParameterAttributes;
-using EventAttributes = System.Reflection.EventAttributes;
-using MethodImplAttributes = System.Reflection.MethodImplAttributes;
-using GenericParameterAttributes = System.Reflection.GenericParameterAttributes;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Boo.Lang.Compiler.Steps
 {
@@ -222,23 +206,23 @@ namespace Boo.Lang.Compiler.Steps
 
 			DefineTypes();
 
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
 			DefineResources();
-			DefineAssemblyAttributes();
+#endif
+            DefineAssemblyAttributes();
 			DefineEntryPoint();
 			DefineModuleConstructor();
 
             // Define the unmanaged version information resource, which 
             // contains the attribute informaion applied earlier
-            //_asmBuilder.DefineVersionInfoResource();
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+            _asmBuilder.DefineVersionInfoResource();
+#endif
 
 			_moduleBuilder.CreateGlobalFunctions(); //setup global .data
 
-            var hello = _moduleBuilder.Assembly.DefinedTypes.First().DeclaredMethods.FirstOrDefault();
-            if (hello != null && hello.Name == "hello" && hello.IsStatic)
-            {
-                hello.Invoke(null, null);
-            }
-            else
+#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0) && DOTNETCORE_BOOISH
+            if (Context.GeneratedAssemblyFileName == "booish.dll")
             {
                 foreach(var t in _moduleBuilder.Assembly.DefinedTypes)
                 {
@@ -250,7 +234,9 @@ namespace Boo.Lang.Compiler.Steps
                     }
                 }
             }
+#endif
 
+#if DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0
             Console.WriteLine("compile success: " + _moduleBuilder.Assembly.FullName);
             if (Context.GeneratedAssemblyFileName == "Boo.Lang.Extensions.dll" 
                 || Context.GeneratedAssemblyFileName == "Boo.Lang.Useful.dll"
@@ -258,9 +244,12 @@ namespace Boo.Lang.Compiler.Steps
             {
                 Extensions_Assemblys.Add(_moduleBuilder.Assembly);
             }
-		}
+#endif
+        }
 
+#if DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0
         internal static List<Assembly> Extensions_Assemblys = new List<Assembly>();
+#endif
 
         void GatherAssemblyAttributes()
 		{
@@ -516,8 +505,11 @@ namespace Boo.Lang.Compiler.Steps
 
 				CreateRelatedTypes(type);
 				var typeBuilder = (TypeBuilder)_emitter.GetBuilder(type);
-                //typeBuilder.CreateType();
+#if DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0
                 typeBuilder.CreateTypeInfo();
+#else
+                typeBuilder.CreateType();
+#endif
                 Trace("type '{0}' successfully created", type);
 			}
 
@@ -848,11 +840,12 @@ namespace Boo.Lang.Compiler.Steps
 		{
 			InternalLocal info = GetInternalLocal(local);
 			info.LocalBuilder = _il.DeclareLocal(GetSystemType(local), info.Type.IsPointer);
-			//if (Parameters.Debug)
-			//{
-   //             //info.LocalBuilder.SetLocalSymInfo(local.Name);
-   //             throw new NotImplementedException("InternalLocal.LocalBuilder.SetLocalSymInfo");
-			//}
+			if (Parameters.Debug)
+            {
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+				info.LocalBuilder.SetLocalSymInfo(local.Name);
+#endif
+			}
 		}
 
 		override public void OnForStatement(ForStatement node)
@@ -3745,32 +3738,36 @@ namespace Boo.Lang.Compiler.Steps
 		private System.Collections.Generic.Queue<LexicalInfo> _dbgSymbols = new System.Collections.Generic.Queue<LexicalInfo>(_DBG_SYMBOLS_QUEUE_CAPACITY);
 
 		bool EmitDebugInfo(Node startNode, Node endNode)
-		{
+        {
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
 			LexicalInfo start = startNode.LexicalInfo;
 			if (!start.IsValid) return false;
 
 			ISymbolDocumentWriter writer = GetDocumentWriter(start.FullPath);
 			if (null == writer) return false;
 
-			//// ensure there is no duplicate emitted
-			//if (_dbgSymbols.Contains(start)) {
-			//	Context.TraceInfo("duplicate symbol emit attempt for '{0}' : '{1}'.", start, startNode);
-			//	return false;
-			//}
-			//if (_dbgSymbols.Count >= _DBG_SYMBOLS_QUEUE_CAPACITY) _dbgSymbols.Dequeue();
-			//_dbgSymbols.Enqueue(start);
+			// ensure there is no duplicate emitted
+			if (_dbgSymbols.Contains(start)) {
+				Context.TraceInfo("duplicate symbol emit attempt for '{0}' : '{1}'.", start, startNode);
+				return false;
+			}
+			if (_dbgSymbols.Count >= _DBG_SYMBOLS_QUEUE_CAPACITY) _dbgSymbols.Dequeue();
+			_dbgSymbols.Enqueue(start);
 
-			//try
-			//{
-			//	_il.MarkSequencePoint(writer, start.Line, 0, start.Line+1, 0);
-			//}
-			//catch (Exception x)
-			//{
-			//	Error(CompilerErrorFactory.InternalError(startNode, x));
-			//	return false;
-			//}
+			try
+			{
+				_il.MarkSequencePoint(writer, start.Line, 0, start.Line+1, 0);
+			}
+			catch (Exception x)
+			{
+				Error(CompilerErrorFactory.InternalError(startNode, x));
+				return false;
+			}
 			return true;
-		}
+#else
+            return false;
+#endif
+        }
 
 		private void EmitNop()
 		{
@@ -3778,20 +3775,23 @@ namespace Boo.Lang.Compiler.Steps
 		}
 
 		private ISymbolDocumentWriter GetDocumentWriter(string fname)
-		{
-            //ISymbolDocumentWriter writer = GetCachedDocumentWriter(fname);
-            //if (null != writer) return writer;
+        {
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+			ISymbolDocumentWriter writer = GetCachedDocumentWriter(fname);
+			if (null != writer) return writer;
 
-            //writer = _moduleBuilder.DefineDocument(
-            //	fname,
-            //	Guid.Empty,
-            //	Guid.Empty,
-            //	SymDocumentType.Text);
-            //_symbolDocWriters.Add(fname, writer);
+			writer = _moduleBuilder.DefineDocument(
+				fname,
+				Guid.Empty,
+				Guid.Empty,
+				SymDocumentType.Text);
+			_symbolDocWriters.Add(fname, writer);
 
-            //return writer;
+			return writer;
+#else
             return null;
-		}
+#endif
+        }
 
 		private ISymbolDocumentWriter GetCachedDocumentWriter(string fname)
 		{
@@ -4498,20 +4498,22 @@ namespace Boo.Lang.Compiler.Steps
 
 			if (CompilerOutputType.Library != Parameters.OutputType)
 			{
-                Method method = ContextAnnotations.GetEntryPoint(Context);
-                //if (null != method)
-                //{
-                //    MethodInfo entryPoint = Context.Parameters.GenerateInMemory
-                //        ? _asmBuilder.GetType(method.DeclaringType.FullName).GetMethod(method.Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static)
-                //        : GetMethodBuilder(method);
-                //    _asmBuilder.SetEntryPoint(entryPoint, (PEFileKinds)Parameters.OutputType);
-                //}
-                //else
-                //{
-                //    Errors.Add(CompilerErrorFactory.NoEntryPoint());
-                //}
+				Method method = ContextAnnotations.GetEntryPoint(Context);
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+				if (null != method)
+				{
+					MethodInfo entryPoint = Context.Parameters.GenerateInMemory
+						? _asmBuilder.GetType(method.DeclaringType.FullName).GetMethod(method.Name, BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Static)
+						: GetMethodBuilder(method);
+					_asmBuilder.SetEntryPoint(entryPoint, (PEFileKinds)Parameters.OutputType);
+				}
+				else
+				{
+					Errors.Add(CompilerErrorFactory.NoEntryPoint());
+				}
+#else
                 throw new NotImplementedException("Define entry point failure: .NET Core not support api AssemblyBuilder.SetEntryPoint.");
-
+#endif
             }
 		}
 
@@ -5600,37 +5602,38 @@ namespace Boo.Lang.Compiler.Steps
 			return false;
 		}
 
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
 		void DefineResources()
 		{
-            foreach (ICompilerResource resource in Parameters.Resources)
-                //resource.WriteResource(_sreResourceService);
-                throw new NotImplementedException("SREResourceService");
+			foreach (ICompilerResource resource in Parameters.Resources)
+				resource.WriteResource(_sreResourceService);
 		}
 
-		//SREResourceService _sreResourceService;
+		SREResourceService _sreResourceService;
 
-		//sealed class SREResourceService : IResourceService
-		//{
-		//	AssemblyBuilder _asmBuilder;
-		//	ModuleBuilder _moduleBuilder;
+		sealed class SREResourceService : IResourceService
+		{
+			AssemblyBuilder _asmBuilder;
+			ModuleBuilder _moduleBuilder;
 
-		//	public SREResourceService (AssemblyBuilder asmBuilder, ModuleBuilder modBuilder)
-		//	{
-		//		_asmBuilder = asmBuilder;
-		//		_moduleBuilder = modBuilder;
-		//	}
+			public SREResourceService (AssemblyBuilder asmBuilder, ModuleBuilder modBuilder)
+			{
+				_asmBuilder = asmBuilder;
+				_moduleBuilder = modBuilder;
+			}
 
-		//	public bool EmbedFile(string resourceName, string fname)
-		//	{
-		//		_moduleBuilder.DefineManifestResource(resourceName, File.OpenRead(fname), ResourceAttributes.Public);
-		//		return true;
-		//	}
+			public bool EmbedFile(string resourceName, string fname)
+			{
+				_moduleBuilder.DefineManifestResource(resourceName, File.OpenRead(fname), ResourceAttributes.Public);
+				return true;
+			}
 
-		//	public IResourceWriter DefineResource(string resourceName, string resourceDescription)
-		//	{
-		//		return _moduleBuilder.DefineResource(resourceName, resourceDescription);
-		//	}
-		//}
+			public IResourceWriter DefineResource(string resourceName, string resourceDescription)
+			{
+				return _moduleBuilder.DefineResource(resourceName, resourceDescription);
+			}
+		}
+#endif
 
 		void SetUpAssembly()
 		{
@@ -5638,10 +5641,13 @@ namespace Boo.Lang.Compiler.Steps
 			var asmName = CreateAssemblyName(outputFile);
 			var assemblyBuilderAccess = GetAssemblyBuilderAccess();
 			var targetDirectory = GetTargetDirectory(outputFile);
-            //_asmBuilder = string.IsNullOrEmpty(targetDirectory)
-            //	? AppDomain.CurrentDomain.DefineDynamicAssembly(asmName, assemblyBuilderAccess)
-            //	: AppDomain.CurrentDomain.DefineDynamicAssembly(asmName, assemblyBuilderAccess, targetDirectory);
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+			_asmBuilder = string.IsNullOrEmpty(targetDirectory)
+				? AppDomain.CurrentDomain.DefineDynamicAssembly(asmName, assemblyBuilderAccess)
+				: AppDomain.CurrentDomain.DefineDynamicAssembly(asmName, assemblyBuilderAccess, targetDirectory);
+#else 
             _asmBuilder = AssemblyBuilder.DefineDynamicAssembly(asmName, assemblyBuilderAccess);
+#endif
 
             if (Parameters.Debug)
 			{
@@ -5652,21 +5658,26 @@ namespace Boo.Lang.Compiler.Steps
 			}
 
 			_asmBuilder.SetCustomAttribute(CreateRuntimeCompatibilityAttribute());
-            //_moduleBuilder = _asmBuilder.DefineDynamicModule(asmName.Name, Path.GetFileName(outputFile), Parameters.Debug);
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+			_moduleBuilder = _asmBuilder.DefineDynamicModule(asmName.Name, Path.GetFileName(outputFile), Parameters.Debug);
+#else
             _moduleBuilder = _asmBuilder.DefineDynamicModule(asmName.Name);
+#endif
 
             if (Parameters.Unsafe)
 				_moduleBuilder.SetCustomAttribute(CreateUnverifiableCodeAttribute());
 
-			//_sreResourceService = new SREResourceService (_asmBuilder, _moduleBuilder);
-			ContextAnnotations.SetAssemblyBuilder(Context, _asmBuilder);
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+			_sreResourceService = new SREResourceService (_asmBuilder, _moduleBuilder);
+#endif
+            ContextAnnotations.SetAssemblyBuilder(Context, _asmBuilder);
 
 			Context.GeneratedAssemblyFileName = outputFile;
 		}
 
 		AssemblyBuilderAccess GetAssemblyBuilderAccess()
-		{
-            return AssemblyBuilderAccess.RunAndCollect;
+        {
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
 			if (Parameters.GenerateCollectible)
 			{
 #if !NET_40_OR_GREATER
@@ -5674,16 +5685,18 @@ namespace Boo.Lang.Compiler.Steps
 				Context.Warnings.Add(CompilerWarningFactory.CustomWarning("Collectible Assemblies are available only on .NET Framework 4.0 or later (https://msdn.microsoft.com/en-us/library/dd554932(v=vs.100).aspx)"));
 				return Parameters.GenerateInMemory ? AssemblyBuilderAccess.RunAndSave : AssemblyBuilderAccess.Save;
 #else
-				return Parameters.GenerateInMemory ? AssemblyBuilderAccess.RunAndCollect : throw new NotImplementedException("AssemblyBuilderAccess.Save");
+				return Parameters.GenerateInMemory ? AssemblyBuilderAccess.RunAndCollect : AssemblyBuilderAccess.Save;
 #endif
 			}
 			else
 			{
-                //return Parameters.GenerateInMemory ? AssemblyBuilderAccess.RunAndSave : AssemblyBuilderAccess.Save;
-                throw new NotImplementedException("AssemblyBuilderAccess.Save");
+				return Parameters.GenerateInMemory ? AssemblyBuilderAccess.RunAndSave : AssemblyBuilderAccess.Save;
 			}
+#else 
+            return AssemblyBuilderAccess.RunAndCollect;
+#endif
 
-		}
+        }
 
 		AssemblyName CreateAssemblyName(string outputFile)
 		{

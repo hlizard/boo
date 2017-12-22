@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+using System;
 using System.Runtime.InteropServices;
 
 namespace System.Reflection.Emit
@@ -16,3 +17,4 @@ namespace System.Reflection.Emit
         WindowApplication
     }
 }
+#endif

@@ -27,13 +27,16 @@
 #endregion
 
 using System.Linq;
-//using System.Runtime.Remoting.Messaging;
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+using System.Runtime.Remoting.Messaging;
+#else
+using EffectiveAsyncResult;
+#endif
 using Boo.Lang.Compiler.TypeSystem.Builders;
 using Boo.Lang.Compiler.TypeSystem.Core;
 using Boo.Lang.Compiler.Util;
 using Boo.Lang.Compiler.Ast;
 using Boo.Lang.Compiler.TypeSystem;
-using EffectiveAsyncResult;
 
 namespace Boo.Lang.Compiler.Steps
 {
@@ -220,8 +223,12 @@ namespace Boo.Lang.Compiler.Steps
 
 			var type = typeof(AsyncResult);
 			_asyncResultType = TypeSystemServices.Map(type);
-			_asyncResultTypeAsyncDelegateGetter = TypeSystemServices.Map(Methods.GetterOf<AsyncResult, object>(r => r.AsyncWaitHandle));
-		}
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+			_asyncResultTypeAsyncDelegateGetter = TypeSystemServices.Map(Methods.GetterOf<AsyncResult, object>(r => r.AsyncDelegate));
+#else
+            _asyncResultTypeAsyncDelegateGetter = TypeSystemServices.Map(Methods.GetterOf<AsyncResult, object>(r => r.AsyncWaitHandle));
+#endif
+        }
 		
 		override public void Dispose()
 		{

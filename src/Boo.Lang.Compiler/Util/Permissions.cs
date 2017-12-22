@@ -34,27 +34,37 @@ namespace Boo.Lang.Compiler.Util
 	internal static class Permissions
 	{
 		public static T WithEnvironmentPermission<T>(Func<T> function)
-		{
-            return default(T); //WithPermission(ref hasEnvironmentPermission, () => new EnvironmentPermission(PermissionState.Unrestricted), function);
-		}
-
-		public static T WithDiscoveryPermission<T>(Func<T> function)
-		{
-			return default(T); //WithPermission(ref hasDiscoveryPermission, () => new FileIOPermission(PermissionState.Unrestricted), function);
+        {
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+            WithPermission(ref hasEnvironmentPermission, () => new EnvironmentPermission(PermissionState.Unrestricted), function);
+#else
+            return default(T);
+#endif
         }
 
-		//public static void WithAppDomainPermission(Action action)
-		//{
-		//	WithPermission(ref hasAppDomainPermission,
-		//		() => new SecurityPermission(SecurityPermissionFlag.ControlAppDomain),
-		//		() => { action(); return false; });
-		//}
+		public static T WithDiscoveryPermission<T>(Func<T> function)
+        {
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+			WithPermission(ref hasDiscoveryPermission, () => new FileIOPermission(PermissionState.Unrestricted), function);
+#else
+            return default(T);
+#endif
+        }
 
-		//static bool? hasAppDomainPermission;
-		//static bool? hasEnvironmentPermission;
-		//static bool? hasDiscoveryPermission;
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+        public static void WithAppDomainPermission(Action action)
+        {
+            WithPermission(ref hasAppDomainPermission,
+                () => new SecurityPermission(SecurityPermissionFlag.ControlAppDomain),
+                () => { action(); return false; });
+        }
 
-		private static TRetVal WithPermission<TPermission, TRetVal>(ref bool? hasPermission, Func<TPermission> permission, Func<TRetVal> function)
+        static bool? hasAppDomainPermission;
+        static bool? hasEnvironmentPermission;
+        static bool? hasDiscoveryPermission;
+#endif
+
+        private static TRetVal WithPermission<TPermission, TRetVal>(ref bool? hasPermission, Func<TPermission> permission, Func<TRetVal> function)
 		{
 			if (hasPermission.HasValue && !hasPermission.Value)
 				return default(TRetVal);

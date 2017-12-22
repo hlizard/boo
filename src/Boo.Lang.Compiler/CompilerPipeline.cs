@@ -80,9 +80,13 @@ namespace Boo.Lang.Compiler
 				case "parse": return new Pipelines.Parse();
 				case "compile": return new Pipelines.Compile();
 				case "run": return new Pipelines.Run();
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+				case "default": return new Pipelines.CompileToFile();
+				case "verify": return new Pipelines.CompileToFileAndVerify();
+#else
 				case "default": return new Pipelines.CompileToMemory();
-				//case "verify": return new Pipelines.CompileToFileAndVerify();
-				case "roundtrip": return new Pipelines.ParseAndPrint();
+#endif
+                case "roundtrip": return new Pipelines.ParseAndPrint();
 				case "boo": return new Pipelines.CompileToBoo();
 				case "ast": return new Pipelines.ParseAndPrintAst();
 				case "xml": return new Pipelines.ParseAndPrintXml();
