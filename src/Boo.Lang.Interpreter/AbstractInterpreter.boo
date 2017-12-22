@@ -250,7 +250,7 @@ class AbstractInterpreter:
 		InitializeModuleInterpreter(asm, module)
 		
 		ExecuteEntryPoint(asm) if asm.EntryPoint is not null
-		ExecuteMain(asm) if asm.EntryPoint is null
+		ExecuteMain(asm) if asm.EntryPoint is null	#.net core not support api AssemblyBuilder.SetEntryPoint
 			
 		return result
 		
