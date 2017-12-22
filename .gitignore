@@ -54,3 +54,5 @@ bin
 /tools/ndoc/src/Gui/obj
 /tools/ndoc/src/Test/bin
 /tools/ndoc/src/Test/obj
+
+.vs
