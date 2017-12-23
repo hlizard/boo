@@ -39,7 +39,7 @@ import Boo.Lang.Compiler.TypeSystem.Core
 import Boo.Lang.Compiler.TypeSystem.Reflection
 import Boo.Lang.Compiler.TypeSystem.Internal
 import Boo.Lang.Compiler.IO
-import System.Linq.Enumerable from System.Linq
+#import System.Linq.Enumerable from System.Linq
 
 class AbstractInterpreter:
 
@@ -250,7 +250,7 @@ class AbstractInterpreter:
 		InitializeModuleInterpreter(asm, module)
 		
 		ExecuteEntryPoint(asm) if asm.EntryPoint is not null
-		ExecuteMain(asm) if asm.EntryPoint is null	#.net core not support api AssemblyBuilder.SetEntryPoint
+		TryExecuteMain(asm) if asm.EntryPoint is null	#.net core not support api AssemblyBuilder.SetEntryPoint
 			
 		return result
 		
@@ -261,14 +261,15 @@ class AbstractInterpreter:
 		ensure:
 			AppDomain.CurrentDomain.AssemblyResolve -= AppDomain_AssemblyResolve
 		
-	def ExecuteMain(asm as System.Reflection.Assembly):
+	def TryExecuteMain(asm as System.Reflection.Assembly):
 		AppDomain.CurrentDomain.AssemblyResolve += AppDomain_AssemblyResolve
 		try:
 			for t in asm.DefinedTypes:
 				if t.FullName.StartsWith("__input"):
-					main = t.DeclaredMethods.Single()
-					main.Invoke(null, (null,)) 
-					break
+					main = t.DeclaredMethods.SingleOrDefault({x as MethodInfo | x.Name == "Main"})
+					if main is not null:
+						main.Invoke(null, (null,)) 
+						break
 		ensure:
 			AppDomain.CurrentDomain.AssemblyResolve -= AppDomain_AssemblyResolve
 			

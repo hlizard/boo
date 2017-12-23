@@ -2,7 +2,7 @@
   "profiles": {
     "booc.Core": {
       "commandName": "Project",
-      "commandLineArgs": "-target:library -debug- -nostdlib -o:booish.dll -srcdir:\\MyCode\\boo-0.9.6\\src\\booish -srcdir:\\MyCode\\boo-0.9.6\\src\\Boo.Lang.Interpreter -srcdir:\\MyCode\\boo-0.9.6\\src\\booish.mod.os -r:Boo.Lang.Parser.dll -r:Boo.Lang.Compiler.dll -r:Boo.Lang.dll -r:Boo.Lang.Extensions.dll -r:Boo.Lang.Useful.dll -r:Boo.Lang.PatternMatching.dll -r:System.Private.CoreLib.dll -r:System.Private.Xml.dll -r:System.Runtime.Extensions.dll -r:System.Runtime.dll -r:System.IO.FileSystem.dll -r:System.Console.dll -r:System.Collections.dll -r:System.Diagnostics.Process.dll -r:System.Diagnostics.TextWriterTraceListener.dll -r:System.Linq.dll"
+      "commandLineArgs": "-target:library -debug- -nostdlib -o:booish.dll -srcdir:..\\..\\src\\booish -srcdir:..\\..\\src\\Boo.Lang.Interpreter -srcdir:..\\..\\src\\booish.mod.os -r:Boo.Lang.Parser.dll -r:Boo.Lang.Compiler.dll -r:Boo.Lang.dll -r:Boo.Lang.Extensions.dll -r:Boo.Lang.Useful.dll -r:Boo.Lang.PatternMatching.dll -r:System.Private.CoreLib.dll -r:System.Private.Xml.dll -r:System.Runtime.Extensions.dll -r:System.Runtime.dll -r:System.IO.FileSystem.dll -r:System.Console.dll -r:System.Collections.dll -r:System.Diagnostics.Process.dll -r:System.Diagnostics.TextWriterTraceListener.dll -r:System.Linq.dll"
     }
   }
 }

@@ -230,9 +230,12 @@ namespace Boo.Lang.Compiler.Steps
                 {
                     if(t.FullName == "BooishModule")
                     {
-                        var main = t.DeclaredMethods.Single();
-                        main.Invoke(null, new object[] { new string[] { "-d", "-w" } });
-                        break;
+                        var main = t.DeclaredMethods.SingleOrDefault(x=>x.Name == "Main");
+                        if (main != null)
+                        {
+                            main.Invoke(null, new object[] { new string[] { "-d", "-w" } });
+                            break;
+                        }
                     }
                 }
             }

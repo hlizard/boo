@@ -56,19 +56,61 @@ namespace Boo.Lang.Compiler.Resources
             _typeName = typeName;
         }
 
-        public string TypeName => _typeName;
+        public string TypeName
+        {
+            get
+            {
+                return _typeName;
+            }
+        }
 
-        public int TypeId => _typeId;
+        public int TypeId
+        {
+            get
+            {
+                return _typeId;
+            }
+        }
 
-        public string Name => _name;
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+        }
 
-        public int Id => _id;
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+        }
 
-        public DWORD LanguageId => _languageId;
+        public DWORD LanguageId
+        {
+            get
+            {
+                return _languageId;
+            }
+        }
 
-        public DWORD CodePage => _codePage;
+        public DWORD CodePage
+        {
+            get
+            {
+                return _codePage;
+            }
+        }
 
-        public IEnumerable<byte> Data => _data;
+        public IEnumerable<byte> Data
+        {
+            get
+            {
+                return _data;
+            }
+        }
     }
 
     internal static class VersionHelper
@@ -889,14 +931,14 @@ namespace Boo.Lang.Compiler.Resources
                 fileVersion: versionAttr.Version,
                 originalFileName: filename,
                 internalName: filename,
-                productVersion: informationVersionAttr?.InformationalVersion ?? versionAttr.Version,
-                fileDescription: titleAttr?.Title ?? " ", //alink would give this a blank if nothing was supplied.
+                productVersion: informationVersionAttr != null && informationVersionAttr.InformationalVersion != null ? informationVersionAttr.InformationalVersion : versionAttr.Version,
+                fileDescription: titleAttr != null && titleAttr.Title != null ? titleAttr.Title : " ", //alink would give this a blank if nothing was supplied.
                 assemblyVersion: new Version(versionAttr.Version),
-                legalCopyright: copytrightAttr?.Copyright ?? " ", //alink would give this a blank if nothing was supplied.
-                legalTrademarks: trademarkAttr?.Trademark,
-                productName: productNameAttr?.Product,
-                comments: descAttr?.Description,
-                companyName: companyAttr?.Company);
+                legalCopyright: copytrightAttr != null && copytrightAttr.Copyright != null ? copytrightAttr.Copyright : " ", //alink would give this a blank if nothing was supplied.
+                legalTrademarks: trademarkAttr != null ? trademarkAttr.Trademark : null,
+                productName: productNameAttr != null ? productNameAttr.Product : null,
+                comments: descAttr != null ? descAttr.Description : null,
+                companyName: companyAttr != null ? companyAttr.Company : null);
         }
 
         private const string DefaultManifest = @"﻿<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?>

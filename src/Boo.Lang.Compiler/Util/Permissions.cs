@@ -36,7 +36,7 @@ namespace Boo.Lang.Compiler.Util
 		public static T WithEnvironmentPermission<T>(Func<T> function)
         {
 #if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
-            WithPermission(ref hasEnvironmentPermission, () => new EnvironmentPermission(PermissionState.Unrestricted), function);
+            return WithPermission(ref hasEnvironmentPermission, () => new EnvironmentPermission(PermissionState.Unrestricted), function);
 #else
             return default(T);
 #endif
@@ -45,7 +45,7 @@ namespace Boo.Lang.Compiler.Util
 		public static T WithDiscoveryPermission<T>(Func<T> function)
         {
 #if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
-			WithPermission(ref hasDiscoveryPermission, () => new FileIOPermission(PermissionState.Unrestricted), function);
+			return WithPermission(ref hasDiscoveryPermission, () => new FileIOPermission(PermissionState.Unrestricted), function);
 #else
             return default(T);
 #endif

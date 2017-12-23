@@ -18,3 +18,6 @@ cd ~/mycode/boo-0.9.6/
 ./build-tools/bootstrap
 ./nant
 
+
+4..net core版booish启动方法：先publish工程booc.Core.csproj，再执行booish.cmd
+
