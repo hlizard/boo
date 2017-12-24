@@ -51,7 +51,11 @@ namespace Boo.Lang.Compiler
 	{
 		public static IReflectionTypeSystemProvider SharedTypeSystemProvider = new ReflectionTypeSystemProvider();
 
-		private TextWriter _outputWriter;
+#if DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0
+        public static List<Assembly> Extensions_Assemblys = new List<Assembly>();
+#endif
+
+        private TextWriter _outputWriter;
 
 		private readonly CompilerInputCollection _input;
 
@@ -179,9 +183,9 @@ namespace Boo.Lang.Compiler
             }) ?? LoadAssembly(booLangExtensionsDll, false);
 
 #else
-            if (Steps.EmitAssembly.Extensions_Assemblys.Any(x => x.FullName.StartsWith("Boo.Lang.Extensions,")))
+            if (Extensions_Assemblys.Any(x => x.FullName.StartsWith("Boo.Lang.Extensions,")))
             {
-                return AssemblyReferenceFor(Steps.EmitAssembly.Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.Extensions,")));
+                return AssemblyReferenceFor(Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.Extensions,")));
             }
             return null;
 #endif
@@ -229,13 +233,13 @@ namespace Boo.Lang.Compiler
             }
             else if (assemblyName == "Boo.Lang.Useful.dll")
             {
-                var asmr = AssemblyReferenceFor(Steps.EmitAssembly.Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.Useful,")));
+                var asmr = AssemblyReferenceFor(Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.Useful,")));
                 _compilerReferences.Add(asmr);
                 return asmr;
             }
             else if (assemblyName == "Boo.Lang.PatternMatching.dll")
             {
-                var asmr = AssemblyReferenceFor(Steps.EmitAssembly.Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.PatternMatching,")));
+                var asmr = AssemblyReferenceFor(Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.PatternMatching,")));
                 _compilerReferences.Add(asmr);
                 return asmr;
             }

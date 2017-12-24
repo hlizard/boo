@@ -66,9 +66,14 @@ namespace booc
 		{
 			_options = options;
             _options.GenerateCollectible = false;
-			_options.GenerateInMemory = false;
 
-			var tempLibPaths = _options.LibPaths.ToArray();
+#if !NETCOREAPP2_0
+			_options.GenerateInMemory = false;
+#else
+            _options.GenerateInMemory = true;
+#endif
+
+            var tempLibPaths = _options.LibPaths.ToArray();
 			_options.LibPaths.Clear();
 
 			Parse(args);

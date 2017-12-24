@@ -222,39 +222,7 @@ namespace Boo.Lang.Compiler.Steps
 #endif
 
             _moduleBuilder.CreateGlobalFunctions(); //setup global .data
-
-#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0) && DOTNETCORE_BOOISH
-            if (Context.GeneratedAssemblyFileName == "booish.dll")
-            {
-                foreach(var t in _moduleBuilder.Assembly.DefinedTypes)
-                {
-                    if(t.FullName == "BooishModule")
-                    {
-                        var main = t.DeclaredMethods.SingleOrDefault(x=>x.Name == "Main");
-                        if (main != null)
-                        {
-                            main.Invoke(null, new object[] { new string[] { "-d", "-w" } });
-                            break;
-                        }
-                    }
-                }
-            }
-#endif
-
-#if DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0
-            Console.WriteLine("compile success: " + _moduleBuilder.Assembly.FullName);
-            if (Context.GeneratedAssemblyFileName == "Boo.Lang.Extensions.dll" 
-                || Context.GeneratedAssemblyFileName == "Boo.Lang.Useful.dll"
-                || Context.GeneratedAssemblyFileName == "Boo.Lang.PatternMatching.dll")
-            {
-                Extensions_Assemblys.Add(_moduleBuilder.Assembly);
-            }
-#endif
         }
-
-#if DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0
-        internal static List<Assembly> Extensions_Assemblys = new List<Assembly>();
-#endif
 
 #if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
         private Stream GetIconFile(string filename)

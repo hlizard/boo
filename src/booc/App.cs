@@ -155,7 +155,33 @@ namespace booc
 				var context = compiler.Run();
 				processingTime.Stop();
 
-				if (context.Warnings.Count > 0)
+#if NETCOREAPP2_0
+                if (context.GeneratedAssemblyFileName == "booish.dll")
+                {
+                    foreach(var t in context.GeneratedAssembly.DefinedTypes)
+                    {
+                        if(t.FullName == "BooishModule")
+                        {
+                            var main = t.DeclaredMethods.SingleOrDefault(x=>x.Name == "Main");
+                            if (main != null)
+                            {
+                                main.Invoke(null, new object[] { new string[] { "-d", "-w" } });
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                Console.WriteLine("compile success: " + context.GeneratedAssembly.FullName);
+                if (context.GeneratedAssemblyFileName == "Boo.Lang.Extensions.dll" 
+                    || context.GeneratedAssemblyFileName == "Boo.Lang.Useful.dll"
+                    || context.GeneratedAssemblyFileName == "Boo.Lang.PatternMatching.dll")
+                {
+                    CompilerParameters.Extensions_Assemblys.Add(context.GeneratedAssembly);
+                }
+#endif
+
+                if (context.Warnings.Count > 0)
 				{
 					Console.Error.WriteLine(context.Warnings);
 					Console.Error.WriteLine(StringResources.BooC_Warnings, context.Warnings.Count);
