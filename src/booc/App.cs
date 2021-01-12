@@ -100,7 +100,7 @@ namespace booc
                     "-r:System.Collections.dll",
                     libOption
                 });
-                //compile assembly Boo.Lang.PatternMatching
+				/*//compile assembly Boo.Lang.PatternMatching
                 new App().Run(new string[] {
                     "-target:library",
                     "-debug-",
@@ -113,7 +113,7 @@ namespace booc
                     "-r:Boo.Lang.dll",
                     "-r:System.Private.CoreLib.dll",
                     libOption
-                });
+                });*/
 			}
 #endif
 			return new App().Run(args);
@@ -155,30 +155,33 @@ namespace booc
 				var context = compiler.Run();
 				processingTime.Stop();
 
-#if NETCOREAPP2_0
-                if (context.GeneratedAssemblyFileName == "booish.dll")
-                {
-                    foreach(var t in context.GeneratedAssembly.DefinedTypes)
-                    {
-                        if(t.FullName == "BooishModule")
-                        {
-                            var main = t.DeclaredMethods.SingleOrDefault(x=>x.Name == "Main");
-                            if (main != null)
-                            {
-                                main.Invoke(null, new object[] { new string[] { "-d", "-w" } });
-                                break;
-                            }
-                        }
-                    }
-                }
-                
-                Console.WriteLine("compile success: " + context.GeneratedAssembly.FullName);
-                if (context.GeneratedAssemblyFileName == "Boo.Lang.Extensions.dll" 
-                    || context.GeneratedAssemblyFileName == "Boo.Lang.Useful.dll"
-                    || context.GeneratedAssemblyFileName == "Boo.Lang.PatternMatching.dll")
-                {
-                    CompilerParameters.Extensions_Assemblys.Add(context.GeneratedAssembly);
-                }
+#if NETCOREAPP2_0 || NET5_0
+				if (context.GeneratedAssembly != null)
+				{
+					if (context.GeneratedAssemblyFileName == "booish.dll")
+					{
+						foreach (var t in context.GeneratedAssembly.DefinedTypes)
+						{
+							if (t.FullName == "BooishModule")
+							{
+								var main = t.DeclaredMethods.SingleOrDefault(x => x.Name == "Main");
+								if (main != null)
+								{
+									main.Invoke(null, new object[] { new string[] { "-d", "-w" } });
+									break;
+								}
+							}
+						}
+					}
+
+					Console.WriteLine("compile success: " + context.GeneratedAssembly.FullName);
+					if (context.GeneratedAssemblyFileName == "Boo.Lang.Extensions.dll"
+						|| context.GeneratedAssemblyFileName == "Boo.Lang.Useful.dll"
+						|| context.GeneratedAssemblyFileName == "Boo.Lang.PatternMatching.dll")
+					{
+						CompilerParameters.Extensions_Assemblys.Add(context.GeneratedAssembly);
+					}
+				}
 #endif
 
                 if (context.Warnings.Count > 0)
@@ -200,8 +203,13 @@ namespace booc
 					Console.Error.WriteLine(StringResources.BooC_ProcessingTime, parameters.Input.Count,
 					                        processingTime.ElapsedMilliseconds, setupTime.ElapsedMilliseconds);
 			}
-			catch (Exception x)
+			catch (Exception x1)
 			{
+				Exception x = x1;
+				while (x.InnerException != null)
+				{
+					x = x.InnerException;
+				}
 				var message = (parameters.TraceWarning) ? x : (object)x.Message;
 				Console.Error.WriteLine(string.Format(Boo.Lang.Resources.StringResources.BooC_FatalError, message));
 			}

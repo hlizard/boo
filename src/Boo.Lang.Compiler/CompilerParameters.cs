@@ -51,8 +51,8 @@ namespace Boo.Lang.Compiler
 	{
 		public static IReflectionTypeSystemProvider SharedTypeSystemProvider = new ReflectionTypeSystemProvider();
 
-#if DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0
-        public static List<Assembly> Extensions_Assemblys = new List<Assembly>();
+#if DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0
+		public static List<Assembly> Extensions_Assemblys = new List<Assembly>();
 #endif
 
         private TextWriter _outputWriter;
@@ -158,8 +158,8 @@ namespace Boo.Lang.Compiler
 			//System.Core
 			_compilerReferences.Add(LoadAssembly("System.Core", true));
 
-#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
-            _compilerReferences.Add(LoadAssembly("System.Linq", true));
+#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
+			_compilerReferences.Add(LoadAssembly("System.Linq", true));
 
             _compilerReferences.Add(LoadAssembly("System.Console", true));
 #endif
@@ -175,7 +175,7 @@ namespace Boo.Lang.Compiler
 		private IAssemblyReference TryToLoadExtensionsAssembly()
 		{
 			const string booLangExtensionsDll = "Boo.Lang.Extensions.dll";
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
             return Permissions.WithDiscoveryPermission(() =>
             {
                 var path = Path.Combine(Path.GetDirectoryName(_booAssembly.Location), booLangExtensionsDll);
@@ -183,7 +183,7 @@ namespace Boo.Lang.Compiler
             }) ?? LoadAssembly(booLangExtensionsDll, false);
 
 #else
-            if (Extensions_Assemblys.Any(x => x.FullName.StartsWith("Boo.Lang.Extensions,")))
+			if (Extensions_Assemblys.Any(x => x.FullName.StartsWith("Boo.Lang.Extensions,")))
             {
                 return AssemblyReferenceFor(Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.Extensions,")));
             }
@@ -226,18 +226,18 @@ namespace Boo.Lang.Compiler
 
 		public IAssemblyReference LoadAssembly(string assemblyName, bool throwOnError)
         {
-#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
-            if(assemblyName == "Boo.Lang.Extensions.dll")
+#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
+			if (assemblyName == "Boo.Lang.Extensions.dll")
             {
                 return TryToLoadExtensionsAssembly();
             }
-            else if (assemblyName == "Boo.Lang.Useful.dll")
+            else if (assemblyName == "Boo.Lang.Useful.dll" && Extensions_Assemblys.Any(x => x.FullName.StartsWith("Boo.Lang.Useful,")))
             {
                 var asmr = AssemblyReferenceFor(Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.Useful,")));
                 _compilerReferences.Add(asmr);
                 return asmr;
             }
-            else if (assemblyName == "Boo.Lang.PatternMatching.dll")
+            else if (assemblyName == "Boo.Lang.PatternMatching.dll" && Extensions_Assemblys.Any(x => x.FullName.StartsWith("Boo.Lang.PatternMatching,")))
             {
                 var asmr = AssemblyReferenceFor(Extensions_Assemblys.First(x => x.FullName.StartsWith("Boo.Lang.PatternMatching,")));
                 _compilerReferences.Add(asmr);
