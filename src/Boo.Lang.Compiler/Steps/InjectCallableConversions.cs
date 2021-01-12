@@ -27,7 +27,7 @@
 #endregion
 
 using System.Linq;
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 using System.Runtime.Remoting.Messaging;
 #else
 using EffectiveAsyncResult;
@@ -223,7 +223,7 @@ namespace Boo.Lang.Compiler.Steps
 
 			var type = typeof(AsyncResult);
 			_asyncResultType = TypeSystemServices.Map(type);
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 			_asyncResultTypeAsyncDelegateGetter = TypeSystemServices.Map(Methods.GetterOf<AsyncResult, object>(r => r.AsyncDelegate));
 #else
             _asyncResultTypeAsyncDelegateGetter = TypeSystemServices.Map(Methods.GetterOf<AsyncResult, object>(r => r.AsyncWaitHandle));

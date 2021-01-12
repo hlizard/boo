@@ -52,6 +52,10 @@ namespace Boo.Lang.Compiler.Steps
 
         void Save(AssemblyBuilder builder, string filename)
 		{
+#if NET5_0 || NETSTANDARD
+			var generator = new Lokad.ILPack.AssemblyGenerator();
+			generator.GenerateAssembly(builder, filename);
+#else
 			switch (Parameters.Platform)
 			{
 				case "x86":
@@ -67,6 +71,7 @@ namespace Boo.Lang.Compiler.Steps
 					builder.Save(filename);
 					break;
 			}
+#endif
 		}
 	}
 }

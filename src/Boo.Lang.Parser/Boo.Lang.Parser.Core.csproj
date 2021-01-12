@@ -1,17 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>Boo.Lang.Parser</RootNamespace>
     <AssemblyName>Boo.Lang.Parser</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0;IGNOREKEYFILE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;IGNOREKEYFILE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0;IGNOREKEYFILE</DefineConstants>
+    <DefineConstants>TRACE;RELEASE;IGNOREKEYFILE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

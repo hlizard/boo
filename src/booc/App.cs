@@ -58,8 +58,8 @@ namespace booc
 
 		private static int AppRun(string[] args)
         {
-#if NETCOREAPP2_0
-            if (!args.Any(x=>x=="-h" || x=="-help" || x=="--help") && ConfigurationManager.AppSettings.AllKeys.Contains("boosrcroot"))
+#if NETCOREAPP2_0 || NET5_0
+			if (!args.Any(x=>x=="-h" || x=="-help" || x=="--help") && ConfigurationManager.AppSettings.AllKeys.Contains("boosrcroot"))
 			{
 				var boosrcroot = ConfigurationManager.AppSettings["boosrcroot"];
 				var boolibdir = ConfigurationManager.AppSettings["boolibdir"];
