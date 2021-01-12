@@ -100,7 +100,7 @@ namespace booc
                     "-r:System.Collections.dll",
                     libOption
                 });
-				/*//compile assembly Boo.Lang.PatternMatching
+				//compile assembly Boo.Lang.PatternMatching
                 new App().Run(new string[] {
                     "-target:library",
                     "-debug-",
@@ -113,7 +113,7 @@ namespace booc
                     "-r:Boo.Lang.dll",
                     "-r:System.Private.CoreLib.dll",
                     libOption
-                });*/
+                });
 			}
 #endif
 			return new App().Run(args);
