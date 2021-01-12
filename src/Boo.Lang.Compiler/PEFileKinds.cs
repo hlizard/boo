@@ -1,4 +1,4 @@
-﻿#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+﻿#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 using System;
 using System.Runtime.InteropServices;
 

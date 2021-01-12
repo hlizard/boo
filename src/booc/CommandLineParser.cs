@@ -67,7 +67,7 @@ namespace booc
 			_options = options;
             _options.GenerateCollectible = false;
 
-#if !NETCOREAPP2_0
+#if !(NETCOREAPP2_0 || NET5_0)
 			_options.GenerateInMemory = false;
 #else
             _options.GenerateInMemory = true;

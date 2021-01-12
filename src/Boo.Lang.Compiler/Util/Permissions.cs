@@ -35,23 +35,23 @@ namespace Boo.Lang.Compiler.Util
 	{
 		public static T WithEnvironmentPermission<T>(Func<T> function)
         {
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
             return WithPermission(ref hasEnvironmentPermission, () => new EnvironmentPermission(PermissionState.Unrestricted), function);
 #else
-            return default(T);
+			return default(T);
 #endif
         }
 
 		public static T WithDiscoveryPermission<T>(Func<T> function)
         {
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 			return WithPermission(ref hasDiscoveryPermission, () => new FileIOPermission(PermissionState.Unrestricted), function);
 #else
-            return default(T);
+			return default(T);
 #endif
         }
 
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
         public static void WithAppDomainPermission(Action action)
         {
             WithPermission(ref hasAppDomainPermission,
@@ -64,7 +64,7 @@ namespace Boo.Lang.Compiler.Util
         static bool? hasDiscoveryPermission;
 #endif
 
-        private static TRetVal WithPermission<TPermission, TRetVal>(ref bool? hasPermission, Func<TPermission> permission, Func<TRetVal> function)
+		private static TRetVal WithPermission<TPermission, TRetVal>(ref bool? hasPermission, Func<TPermission> permission, Func<TRetVal> function)
 		{
 			if (hasPermission.HasValue && !hasPermission.Value)
 				return default(TRetVal);

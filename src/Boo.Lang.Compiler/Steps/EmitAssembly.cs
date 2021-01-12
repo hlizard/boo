@@ -513,8 +513,8 @@ namespace Boo.Lang.Compiler.Steps
 
 				CreateRelatedTypes(type);
 				var typeBuilder = (TypeBuilder)_emitter.GetBuilder(type);
-#if DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0
-                typeBuilder.CreateTypeInfo();
+#if DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0
+				typeBuilder.CreateTypeInfo();
 #else
                 typeBuilder.CreateType();
 #endif
