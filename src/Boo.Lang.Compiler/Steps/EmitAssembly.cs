@@ -207,24 +207,24 @@ namespace Boo.Lang.Compiler.Steps
 
 			DefineTypes();
 
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 			DefineResources();
 #endif
-            DefineAssemblyAttributes();
+			DefineAssemblyAttributes();
 			DefineEntryPoint();
 			DefineModuleConstructor();
 
-            // Define the unmanaged information resources, which 
-            // contains the attribute informaion applied earlier,
-            // plus icon data if applicable
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+			// Define the unmanaged information resources, which 
+			// contains the attribute informaion applied earlier,
+			// plus icon data if applicable
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
             DefineUnmanagedResource();
 #endif
 
-            _moduleBuilder.CreateGlobalFunctions(); //setup global .data
+			_moduleBuilder.CreateGlobalFunctions(); //setup global .data
         }
 
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
         private Stream GetIconFile(string filename)
         {
             if (!Path.IsPathRooted(filename))
@@ -850,7 +850,7 @@ namespace Boo.Lang.Compiler.Steps
 			info.LocalBuilder = _il.DeclareLocal(GetSystemType(local), info.Type.IsPointer);
 			if (Parameters.Debug)
             {
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 				info.LocalBuilder.SetLocalSymInfo(local.Name);
 #endif
 			}
@@ -3747,7 +3747,7 @@ namespace Boo.Lang.Compiler.Steps
 
 		bool EmitDebugInfo(Node startNode, Node endNode)
         {
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 			LexicalInfo start = startNode.LexicalInfo;
 			if (!start.IsValid) return false;
 
@@ -3773,7 +3773,7 @@ namespace Boo.Lang.Compiler.Steps
 			}
 			return true;
 #else
-            return false;
+			return false;
 #endif
         }
 
@@ -3784,7 +3784,7 @@ namespace Boo.Lang.Compiler.Steps
 
 		private ISymbolDocumentWriter GetDocumentWriter(string fname)
         {
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 			ISymbolDocumentWriter writer = GetCachedDocumentWriter(fname);
 			if (null != writer) return writer;
 
@@ -3797,7 +3797,7 @@ namespace Boo.Lang.Compiler.Steps
 
 			return writer;
 #else
-            return null;
+			return null;
 #endif
         }
 
@@ -4507,7 +4507,7 @@ namespace Boo.Lang.Compiler.Steps
 			if (CompilerOutputType.Library != Parameters.OutputType)
 			{
 				Method method = ContextAnnotations.GetEntryPoint(Context);
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 				if (null != method)
 				{
 					MethodInfo entryPoint = Context.Parameters.GenerateInMemory
@@ -4520,7 +4520,7 @@ namespace Boo.Lang.Compiler.Steps
 					Errors.Add(CompilerErrorFactory.NoEntryPoint());
 				}
 #else
-                throw new NotImplementedException("Define entry point failure: .NET Core not support api AssemblyBuilder.SetEntryPoint.");
+				throw new NotImplementedException("Define entry point failure: .NET Core not support api AssemblyBuilder.SetEntryPoint.");
 #endif
             }
 		}
@@ -5610,7 +5610,7 @@ namespace Boo.Lang.Compiler.Steps
 			return false;
 		}
 
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 		void DefineResources()
 		{
 			foreach (ICompilerResource resource in Parameters.Resources)
@@ -5649,12 +5649,12 @@ namespace Boo.Lang.Compiler.Steps
 			var asmName = CreateAssemblyName(outputFile);
 			var assemblyBuilderAccess = GetAssemblyBuilderAccess();
 			var targetDirectory = GetTargetDirectory(outputFile);
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 			_asmBuilder = string.IsNullOrEmpty(targetDirectory)
 				? AppDomain.CurrentDomain.DefineDynamicAssembly(asmName, assemblyBuilderAccess)
 				: AppDomain.CurrentDomain.DefineDynamicAssembly(asmName, assemblyBuilderAccess, targetDirectory);
 #else
-            _asmBuilder = AssemblyBuilder.DefineDynamicAssembly(asmName, assemblyBuilderAccess);
+			_asmBuilder = AssemblyBuilder.DefineDynamicAssembly(asmName, assemblyBuilderAccess);
 #endif
 
             if (Parameters.Debug)
@@ -5666,26 +5666,26 @@ namespace Boo.Lang.Compiler.Steps
 			}
 
 			_asmBuilder.SetCustomAttribute(CreateRuntimeCompatibilityAttribute());
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 			_moduleBuilder = _asmBuilder.DefineDynamicModule(asmName.Name, Path.GetFileName(outputFile), Parameters.Debug);
 #else
-            _moduleBuilder = _asmBuilder.DefineDynamicModule(asmName.Name);
+			_moduleBuilder = _asmBuilder.DefineDynamicModule(asmName.Name);
 #endif
 
             if (Parameters.Unsafe)
 				_moduleBuilder.SetCustomAttribute(CreateUnverifiableCodeAttribute());
 
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 			_sreResourceService = new SREResourceService (_asmBuilder, _moduleBuilder);
 #endif
-            ContextAnnotations.SetAssemblyBuilder(Context, _asmBuilder);
+			ContextAnnotations.SetAssemblyBuilder(Context, _asmBuilder);
 
 			Context.GeneratedAssemblyFileName = outputFile;
 		}
 
 		AssemblyBuilderAccess GetAssemblyBuilderAccess()
         {
-#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
+#if !(DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
 			if (Parameters.GenerateCollectible)
 			{
 #if !NET_40_OR_GREATER
@@ -5701,7 +5701,7 @@ namespace Boo.Lang.Compiler.Steps
 				return Parameters.GenerateInMemory ? AssemblyBuilderAccess.RunAndSave : AssemblyBuilderAccess.Save;
 			}
 #else
-            return AssemblyBuilderAccess.RunAndCollect;
+			return AssemblyBuilderAccess.RunAndCollect;
 #endif
 
         }

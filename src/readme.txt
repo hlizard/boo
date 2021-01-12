@@ -10,12 +10,13 @@ src\booc\obj\Release\netcoreapp2.0\win-x86\booc.Core.dll
 
 
 3.linux使用nant构建的hack：
-sudo mkdir /Library/Frameworks/Mono.framework/Versions/Current/bin
+wine z-zip-zstd覆盖解压build-tools/build-tools-offline.7z
+sudo mkdir -p /Library/Frameworks/Mono.framework/Versions/Current/bin
 cd /Library/Frameworks/Mono.framework/Versions/Current/bin
 sudo ln -s /usr/bin/mcs ./mcs
 sudo ln -s /usr/bin/mono ./mono
 cd ~/mycode/boo-0.9.6/
-./build-tools/bootstrap
+#./build-tools/bootstrap
 ./nant
 
 

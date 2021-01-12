@@ -644,8 +644,8 @@ namespace booc
 
 		private void ConfigurePipeline()
         {
-#if !NETCOREAPP2_0
-            var pipeline = _pipelineName != null ? CompilerPipeline.GetPipeline(_pipelineName) : new CompileToFile();
+#if !(NETCOREAPP2_0 || NET5_0)
+			var pipeline = _pipelineName != null ? CompilerPipeline.GetPipeline(_pipelineName) : new CompileToFile();
 #else
             var pipeline = _pipelineName != null ? CompilerPipeline.GetPipeline(_pipelineName) : new CompileToMemory();
 #endif
