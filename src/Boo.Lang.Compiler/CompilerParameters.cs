@@ -226,8 +226,8 @@ namespace Boo.Lang.Compiler
 
 		public IAssemblyReference LoadAssembly(string assemblyName, bool throwOnError)
         {
-#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0)
-            if(assemblyName == "Boo.Lang.Extensions.dll")
+#if (DNXCORE50 || NETSTANDARD1_6 || NETSTANDARD2_0 || NET5_0)
+			if (assemblyName == "Boo.Lang.Extensions.dll")
             {
                 return TryToLoadExtensionsAssembly();
             }
