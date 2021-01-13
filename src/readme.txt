@@ -22,3 +22,18 @@ cd ~/mycode/boo-0.9.6/
 
 4..net core版booish启动方法：先publish工程booc.Core.csproj，再执行booish.cmd
 
+
+
+
+
+
+TODO:
+1.等待ILPack更成熟；
+2.条件编译符号参考https://docs.microsoft.com/en-us/dotnet/core/tutorials/libraries
+
+
+
+其他：
+https://zhuanlan.zhihu.com/p/124063947
+https://stackoverflow.com/questions/58326812/c-sharp-8-features-in-net-framework-4-7-2
+

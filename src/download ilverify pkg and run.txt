@@ -1,0 +1,305 @@
+ompiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .$constructor$Enumerable$198::.ctor([Boo.Lang.PatternMatchi
+ng]Boo.Lang.PatternMatching.Impl.MatchExpansion)] Assembly or module not found:
+Boo.Lang
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .$constructor$Enumerable$198::GetEnumerator(Error while get
+ting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::.ctor([Boo.Lang.PatternMatching]Boo.Lang.Patte
+rnMatching.Impl.MatchExpansion)] Assembly or module not found: Boo.Lang
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::get_Current()] Assembly or module not found: B
+oo.Lang
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::get_Current(Error while getting method signatu
+re)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::Reset()] Assembly or module not found: Boo.Lan
+g
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::MoveNext()] Assembly or module not found: Boo.
+Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::Dispose()] Assembly or module not found: Boo.L
+ang
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::Expand(Error
+ while getting method signature)] Assembly or module not found: Boo.Lang.Compile
+r
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandBothPa
+ttern(Error while getting method signature)] Assembly or module not found: Boo.L
+ang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandConstr
+ainedAndPattern(Error while getting method signature)] Assembly or module not fo
+und: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandConstr
+ainedOrPattern(Error while getting method signature)] Assembly or module not fou
+nd: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandRegexP
+attern(Error while getting method signature)] Assembly or module not found: Boo.
+Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandRegexP
+atternWithBinding(Error while getting method signature)] Assembly or module not
+found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandEither
+Pattern(Error while getting method signature)] Assembly or module not found: Boo
+.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandBindPa
+ttern(Error while getting method signature)] Assembly or module not found: Boo.L
+ang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandValueP
+attern(Error while getting method signature)] Assembly or module not found: Boo.
+Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandCaptur
+ePattern(Error while getting method signature)] Assembly or module not found: Bo
+o.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandObject
+Pattern(Error while getting method signature)] Assembly or module not found: Boo
+.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandObject
+Pattern(Error while getting method signature)] Assembly or module not found: Boo
+.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ObjectPatter
+nFor(Error while getting method signature)] Assembly or module not found: Boo.La
+ng.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandQuasiq
+uotePattern(Error while getting method signature)] Assembly or module not found:
+ Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandMember
+Pattern(Error while getting method signature)] Assembly or module not found: Boo
+.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandMember
+Reference(Error while getting method signature)] Assembly or module not found: B
+oo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::ExpandFixedS
+izePattern(Error while getting method signature)] Assembly or module not found:
+Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::TypeRefFrom(
+Error while getting method signature)] Assembly or module not found: Boo.Lang.Co
+mpiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpander::IsCatchAllPa
+ttern(Error while getting method signature)] Assembly or module not found: Boo.L
+ang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::.ctor([Boo.Lang.PatternMatching]
+Boo.Lang.PatternMatching.Impl.PatternExpander)] Assembly or module not found: Bo
+o.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::.cctor()] Assembly or module not
+ found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::Build(Error while getting method
+ signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::Expand(Error while getting metho
+d signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::Push(Error while getting method
+signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnSpliceExpression(Error while g
+etting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnSpliceTypeReference(Error whil
+e getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::ExpandFixedSize(Error while gett
+ing method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnOmittedExpression(Error while
+getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnSlice(Error while getting meth
+od signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::ExpandProperty(Error while getti
+ng method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnMacroStatement(Error while get
+ting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnSlicingExpression(Error while
+getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnTryCastExpression(Error while
+getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnCastExpression(Error while get
+ting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnMethodInvocationExpression(Err
+or while getting method signature)] Assembly or module not found: Boo.Lang.Compi
+ler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnTypeofExpression(Error while g
+etting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnListLiteralExpression(Error wh
+ile getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnBoolLiteralExpression(Error wh
+ile getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnIntegerLiteralExpression(Error
+ while getting method signature)] Assembly or module not found: Boo.Lang.Compile
+r
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnStringLiteralExpression(Error
+while getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnNullLiteralExpression(Error wh
+ile getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnUnaryExpression(Error while ge
+tting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnBinaryExpression(Error while g
+etting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnReferenceExpression(Error whil
+e getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnSuperLiteralExpression(Error w
+hile getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnSelfLiteralExpression(Error wh
+ile getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnMemberReferenceExpression(Erro
+r while getting method signature)] Assembly or module not found: Boo.Lang.Compil
+er
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnGenericReferenceExpression(Err
+or while getting method signature)] Assembly or module not found: Boo.Lang.Compi
+ler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnSimpleTypeReference(Error whil
+e getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .QuasiquotePatternBuilder::OnGenericTypeReference(Error whi
+le getting method signature)] Assembly or module not found: Boo.Lang.Compiler
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .$ExpandRegexPatternWithBinding$Enumerable$201::.ctor([Boo.
+Lang.PatternMatching]Boo.Lang.PatternMatching.Impl.PatternExpander+$ExpandRegexP
+atternWithBinding$locals$197, [Boo.Lang.PatternMatching]Boo.Lang.PatternMatching
+.Impl.PatternExpander)] Assembly or module not found: Boo.Lang
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .$ExpandRegexPatternWithBinding$Enumerable$201::GetEnumerat
+or()] Assembly or module not found: Boo.Lang
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::.ctor([Boo.Lang.PatternMatching]Boo.Lang.Patte
+rnMatching.Impl.PatternExpander+$ExpandRegexPatternWithBinding$locals$197, [Boo.
+Lang.PatternMatching]Boo.Lang.PatternMatching.Impl.PatternExpander)] Assembly or
+ module not found: Boo.Lang
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::get_Current()] Assembly or module not found: B
+oo.Lang
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::get_Current()] Assembly or module not found: B
+oo.Lang
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::Reset()] Assembly or module not found: Boo.Lan
+g
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::MoveNext()] Assembly or module not found: Boo.
+Lang
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : .Enumerator::Dispose()] Assembly or module not found: Boo.L
+ang
+[IL]: Error []: [E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.Lang.P
+atternMatching.dll : Boo.Lang.PatternMatching.Impl.PatternExpanderModule::NewTem
+p(Error while getting method signature)] Assembly or module not found: Boo.Lang.
+Compiler
+Assembly or module not found: Boo.Lang.Compiler
+Assembly or module not found: Boo.Lang.Compiler
+Assembly or module not found: Boo.Lang.Compiler
+Assembly or module not found: Boo.Lang
+Assembly or module not found: Boo.Lang.Compiler
+Assembly or module not found: Boo.Lang.Compiler
+Assembly or module not found: Boo.Lang
+93 Error(s) Verifying E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\Boo.L
+ang.PatternMatching.dll
+
+E:\MyCode\boo-0.9.6\src\booc\bin\Debug\net5.0>dotnet any\ilverify.dll ..\netcore
+app2.0\Boo.Lang.PatternMatching.dll -r "c:\Program Files\dotnet\shared\Microsoft
+.NETCore.App\5.0.0\*.dll" -r ..\netcoreapp2.0\*.dll
+All Classes and Methods in E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\
+Boo.Lang.PatternMatching.dll Verified.
+
+E:\MyCode\boo-0.9.6\src\booc\bin\Debug\net5.0>dotnet any\ilverify.dll ..\netcore
+app2.0\Boo.Lang.Useful.dll.bak -r "c:\Program Files\dotnet\shared\Microsoft.NETC
+ore.App\5.0.0\*.dll" -r ..\netcoreapp2.0\*.dll
+Error: System.InvalidCastException: Unable to cast object of type 'Internal.Type
+System.Ecma.EcmaType' to type 'Internal.TypeSystem.ArrayType'.
+   at Internal.IL.ILImporter.ImportLoadElement(TypeDesc elementType)
+   at Internal.IL.ILImporter.ImportBasicBlock(BasicBlock basicBlock)
+   at Internal.IL.ILImporter.ImportBasicBlocks()
+   at Internal.IL.ILImporter.Verify()
+   at ILVerify.Verifier.VerifyMethod(EcmaModule module, MethodIL methodIL, Metho
+dDefinitionHandle methodHandle)
+   at ILVerify.Verifier.VerifyMethods(EcmaModule module, IEnumerable`1 methodHan
+dles)+MoveNext()
+   at ILVerify.Verifier.Verify(PEReader peReader, MethodDefinitionHandle methodH
+andle)+MoveNext()
+   at ILVerify.Program.VerifyMethods(PEReader peReader, EcmaModule module, Strin
+g path, Int32& numErrors, Int32& verifiedMethodCounter, Int32& methodCounter)
+   at ILVerify.Program.VerifyAssembly(PEReader peReader, EcmaModule module, Stri
+ng path)
+   at ILVerify.Program.Run()
+   at ILVerify.Program.Run(Options options)
+
+E:\MyCode\boo-0.9.6\src\booc\bin\Debug\net5.0>dotnet any\ilverify.dll ..\netcore
+app2.0\Boo.Lang.Useful.dll -r "c:\Program Files\dotnet\shared\Microsoft.NETCore.
+App\5.0.0\*.dll" -r ..\netcoreapp2.0\*.dll
+Error: System.InvalidCastException: Unable to cast object of type 'Internal.Type
+System.Ecma.EcmaType' to type 'Internal.TypeSystem.ArrayType'.
+   at Internal.IL.ILImporter.ImportLoadElement(TypeDesc elementType)
+   at Internal.IL.ILImporter.ImportBasicBlock(BasicBlock basicBlock)
+   at Internal.IL.ILImporter.ImportBasicBlocks()
+   at Internal.IL.ILImporter.Verify()
+   at ILVerify.Verifier.VerifyMethod(EcmaModule module, MethodIL methodIL, Metho
+dDefinitionHandle methodHandle)
+   at ILVerify.Verifier.VerifyMethods(EcmaModule module, IEnumerable`1 methodHan
+dles)+MoveNext()
+   at ILVerify.Verifier.Verify(PEReader peReader, MethodDefinitionHandle methodH
+andle)+MoveNext()
+   at ILVerify.Program.VerifyMethods(PEReader peReader, EcmaModule module, Strin
+g path, Int32& numErrors, Int32& verifiedMethodCounter, Int32& methodCounter)
+   at ILVerify.Program.VerifyAssembly(PEReader peReader, EcmaModule module, Stri
+ng path)
+   at ILVerify.Program.Run()
+   at ILVerify.Program.Run(Options options)
+
+E:\MyCode\boo-0.9.6\src\booc\bin\Debug\net5.0>dotnet any\ilverify.dll ..\netcore
+app2.0\Boo.Lang.Parser.dll -r "c:\Program Files\dotnet\shared\Microsoft.NETCore.
+App\5.0.0\*.dll" -r ..\netcoreapp2.0\*.dll
+All Classes and Methods in E:\MyCode\boo-0.9.6\src\booc\bin\Debug\netcoreapp2.0\
+Boo.Lang.Parser.dll Verified.
+
+E:\MyCode\boo-0.9.6\src\booc\bin\Debug\net5.0>
+
+
+
+
+最后找到安装的文件在C:\Users\ding\.dotnet\tools\ilverify.exe

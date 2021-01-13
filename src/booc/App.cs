@@ -73,11 +73,12 @@ namespace booc
                     "-v",
                     "-noconfig",
                     "-o:Boo.Lang.Extensions.dll",
-                    "-srcdir:" + boosrcroot + "src/Boo.Lang.Extensions",
+					"-p:default",
+					"-srcdir:" + boosrcroot + "src/Boo.Lang.Extensions",
                     "-r:Boo.Lang.Compiler.dll",
                     "-r:Boo.Lang.dll",
                     "-r:System.Private.CoreLib.dll",
-                    libOption
+					libOption
                 });
                 //compile assembly Boo.Lang.Useful
                 new App().Run(new string[] {
@@ -86,7 +87,8 @@ namespace booc
                     "-v",
                     "-noconfig",
                     "-o:Boo.Lang.Useful.dll",
-                    "-srcdir:" + boosrcroot + "src/Boo.Lang.Useful",
+					"-p:default",
+					"-srcdir:" + boosrcroot + "src/Boo.Lang.Useful",
                     "-r:Boo.Lang.Parser.dll",
                     "-r:Boo.Lang.Compiler.dll",
                     "-r:Boo.Lang.dll",
@@ -107,7 +109,8 @@ namespace booc
                     "-v",
                     "-noconfig",
                     "-o:Boo.Lang.PatternMatching.dll",
-                    "-srcdir:" + boosrcroot + "src/Boo.Lang.PatternMatching",
+					"-p:default",
+					"-srcdir:" + boosrcroot + "src/Boo.Lang.PatternMatching",
                     "-r:Boo.Lang.Useful.dll",
                     "-r:Boo.Lang.Compiler.dll",
                     "-r:Boo.Lang.dll",
